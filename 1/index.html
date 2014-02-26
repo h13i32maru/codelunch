@@ -2,99 +2,91 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="../css/vol.css"/>
+  <link rel="stylesheet" type="text/css" href="../css/style.css"/>
   <title>Code Lunch Vol.1</title>
 </head>
 <body>
-<div id="header">
-  <div id="header-content">
-    <div class="rss">
-      <img src="../image/icon-rss.png">
-      <p>RSS</p>
-    </div>
-    <div class="twitter">
-      <img src="../image/icon-bird.png">
-      <p>@h13i32maru</p>
-    </div>
-    <div class="twitter">
-      <img src="../image/icon-bird.png">
-      <p>@iizukak</p>
-    </div>
-  </div>
-</div>
 
-<h1>
-  <a href="../">
-    <img src="../image/key-visual.png">
-  </a>
-</h1>
-<!--コンテンツ-->
-<div class="container">
-  <!-- コンテンツの中身 -->
-  <div id="latest-vol">
-    <div class="circle">
-      <img src="../image/number-bg.png">
-
-      <div class="number">
-        <!-- 通し番号 -->
-        <p>1</p>
+<header class="cl-navbar">
+  <div class="cl-container">
+    <div class="cl-row">
+      <div class="cl-col">
+        <span class="cl-icon-twitter"></span>
+        <span>@h13i32maru</span>
+      </div>
+      <div class="cl-col">
+        <span class="cl-icon-twitter"></span>
+        <span>@iizukak</span>
+      </div>
+      <div class="cl-col">
+        <span class="cl-icon-rss"></span>
+        <span>RSS</span>
       </div>
     </div>
-    <div class="main-info">
-      <!-- 時間 -->
-      <p class="time">
-        2013/12/12
-      </p>
-      <!--　タイトル -->
-      <p class="title">
-        タイトル本文
-      </p>
-    </div>
-    <div class="text">
-      <!-- 本文 -->
-      <p>
-        テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文
-      </p>
-    </div>
-    <div id="sound">
-    </div>
-    <div id="related">
-      <img src="../image/title-related.png" alt="RELATED WORDS">
-
-      <p><a href="#">話された内容についてのリンク</a></p>
-
-      <p><a href="#">話された内容についてのリンク</a></p>
-
-      <p><a href="#">話された内容についてのリンク</a></p>
-
-      <p><a href="#">話された内容についてのリンク</a></p>
-
-    </div>
   </div>
-  <!--　コンテンツの中身ここまで -->
+</header>
 
-</div>
-<div id="footer">
-  <div id="footer-link">
-    <div class="twitter">
-      <img src="../image/icon-bird.png">
-      <p>@h13i32maru</p>
+<div class="cl-doc-header"></div>
+
+<div class="cl-container cl-doc-body cl-doc-vol-body">
+  <section>
+    <div class="cl-row">
+      <div class="cl-col">
+        <span class="cl-icon-number-bg"><span>3</span></span>
+      </div>
+      <div class="cl-col">
+        <p class="cl-date">2013/12/12</p>
+        <p class="cl-title">タイトル本文</p>
+      </div>
     </div>
-    <div class="twitter">
-      <img src="../image/icon-bird.png">
-      <p>@iizukak</p>
+
+    <div>
+      <p class="cl-text">テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文テキスト本文</p>
     </div>
-    <div class="rss">
-      <p>RSS FEED</p>
-      <img src="../image/icon-rss.png">
+
+    <div class="cl-sound-cloud">
+      <iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/124945439&amp;color=ff6600&amp;auto_play=false&amp;show_artwork=false"></iframe>
     </div>
-    <div id="logo"><img src="../image/footer-logo.png">
+
+    <div>
+      <span class="cl-icon-related-words"></span>
+      <div class="cl-related-words">
+        <p><a href="#">関連ワード</a></p>
+        <p><a href="#">関連ワード</a></p>
+        <p><a href="#">関連ワード</a></p>
+        <p><a href="#">関連ワード</a></p>
+      </div>
     </div>
-  </div>
-  <div id="copyright">
-    <p>COPYRIGHT 2014 BY CODE LUNCH ALL RIGHTS RESERVED</p>
-  </div>
+  </section>
 </div>
 
+<footer class="cl-doc-footer">
+  <div class="cl-container">
+    <span class="cl-icon-logo"></span>
+
+    <div class="cl-row">
+      <div class="cl-col">
+        <span class="cl-icon-twitter"></span>
+        <span>@h13i32maru</span>
+      </div>
+      <div class="cl-col">
+        <span class="cl-icon-twitter"></span>
+        <span>@iizukak</span>
+      </div>
+      <div class="cl-col">
+        <span class="cl-icon-rss"></span>
+        <span>RSS</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<footer class="cl-copyright-footer">
+  <div class="cl-container">
+    <div class="cl-copyright">
+      <p>COPYRIGHT 2014 BY CODE LUNCH ALL RIGHTS RESERVED</p>
+    </div>
+  </div>
+</footer>
 </body>
 </html>
