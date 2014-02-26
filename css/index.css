@@ -50,14 +50,12 @@ p{
   margin: 0 10px;
 }
 
-h1{
-    margin: 0px auto;
-    background-color: #000000;
-    height: 176px;
+/* for header */
+.cl-doc-header {
+  height: 176px;
+  background: #000 url("../image/key-visual.png") no-repeat;
 }
-h1 img{
-    padding: 0px;
-}
+
 .container{
     background-color: white;
     margin: 16px auto 48px;
