@@ -5,12 +5,12 @@ body{
 }
 
 p{
-  color: #2d2d2d;
   margin: 0;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 /* for grid system */
@@ -62,6 +62,12 @@ a {
   height: 32px;
 }
 
+.cl-icon-logo {
+  background-image: url("../image/footer-logo.png");
+  width: 168px;
+  height: 32px;
+}
+
 /* for navigation bar */
 .cl-navbar {
   height:32px;
@@ -87,6 +93,7 @@ a {
   background-color: #fff;
   margin: 16px auto 48px;
   padding-bottom: 48px;
+  color: #2d2d2d;
   /*height: 536px;*/
   border: 1px solid #cccccc;
 }
@@ -149,6 +156,29 @@ a {
   top: 50%;
   right: 0;
   margin-top: -16px;
+}
+
+/* for footer */
+footer.cl-doc-footer {
+  background-color: #333333;
+  color: #fff;
+  height: 88px;
+  padding-top: 24px;
+  font-size: 14px;
+}
+
+footer.cl-doc-footer .cl-icon-logo {
+  float: right;
+}
+
+/* for copyright */
+footer.cl-copyright-footer {
+  height: 34px;
+  background-color: #2c2c2c;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  padding-top: 14px;
 }
 
 /* ---- */
