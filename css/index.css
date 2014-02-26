@@ -6,42 +6,50 @@ body{
 p{
     color: #2d2d2d;
 }
-#contents{
-    background-color: #f8f8f8;
+
+/* for grid system */
+.cl-container {
+  width: 712px;
+  margin: auto;
 }
-#header{
-    height:32px;
-    background-color:#000000;
+
+.cl-row {
+  width: 100%;
 }
-#header p{
-    font-size: 14px;
-    color:#ffffff;
-    float:right;
-    margin: 0px;
-    padding-top: 0px;
+
+.cl-row > [class^=cl-col] {
+  display: inline-block;
 }
-#header .rss p{
-    float:left;
+
+/* for icon */
+.cl-icon-twitter {
+  background-image: url("../image/icon-bird.png");
+  display: inline-block;
+  width: 20px;
+  height: 16px;
 }
-#header .twitter{
-    width: 142px;
-    float:right;
-    padding-top:4px;
-    padding-right: 24px;
+
+.cl-icon-rss {
+  background-image: url("../image/icon-rss.png");
+  display: inline-block;
+  width: 16px;
+  height: 16px;
 }
-.twitter img{
-    margin-left:20px;
+
+/* for navigation bar */
+.cl-navbar {
+  height:32px;
+  line-height: 32px;
+  text-align: right;
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
 }
-#header .rss{
-    width: 64px;
-    float:right;
-    padding-top:4px;
+
+.cl-navbar .cl-col {
+  margin: 0 10px;
 }
-#header-content{
-    content: block;
-    width: 712px;
-    margin: 0px auto;
-}
+
 h1{
     margin: 0px auto;
     background-color: #000000;
