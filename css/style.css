@@ -166,7 +166,11 @@ a {
 
 /* for doc vol body */
 .cl-doc-vol-body {
-  height: 536px;
+  height: auto;
+}
+
+.cl-doc-vol-body > section{
+  height: auto;
 }
 
 .cl-doc-vol-body .cl-sound-cloud {
