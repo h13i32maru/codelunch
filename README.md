@@ -15,7 +15,7 @@
     }
     ```
 - buildしてhtmlを作成する
-    ```sh
-    ./tool/build.js 1/content.json
-    ```
+```sh
+./tool/build.js 1/content.json
+```
 
