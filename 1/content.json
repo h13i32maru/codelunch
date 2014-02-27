@@ -1,0 +1,32 @@
+{
+  "vol": 1,
+  "track": "124945439",
+  "date": "2013/12/15",
+  "title": "Webフロントエンド",
+  "text": "@iizukakと@h13i32maruの二人でWebフロントエンドを中心とした話をしました。",
+  "words": [
+    {"word": "寿司との最適な距離の取り方につ", "url": "http://www.portalshit.net/2013/12/09/optimum-distance-from-sushi"},
+    {"word": "Firefox OS", "url": "http://www.mozilla.jp/firefoxos/"},
+    {"word": "AngularJS", "url": "http://angularjs.org/"},
+    {"word": "Vim Advent Calendar 2012", "url": "http://atnd.org/events/33746"},
+    {"word": "PhpStorm", "url": "http://www.jetbrains.com/phpstorm/"},
+    {"word": "JavaScript - Client Side - Advent Calendar 201", "url": "3http://qiita.com/advent-calendar/2013/javascript"},
+    {"word": "Firefox OS Advent Calendar 2013", "url": "http://www.adventar.org/calendars/103"},
+    {"word": "Next Mobile WebApplication", "url": "https://speakerdeck.com/uupaa/next-mobile-webapplication"},
+    {"word": "HOBBIT", "url": "http://middle-earth.thehobbit.com/"},
+    {"word": "Web Audio API", "url": "http://www.w3.org/TR/webaudio/"},
+    {"word": "Can I use", "url": "http://caniuse.com/"},
+    {"word": "WebView for Android", "url": "https://developers.google.com/chrome/mobile/docs/webview/overview"},
+    {"word": "ExGame", "url": "http://developer.dena.jp/mbga/support/exgame.html"},
+    {"word": "LWF", "url": "http://gree.github.io/lwf/"},
+    {"word": "High", "url": "https://speakerdeck.com/ahomu/high-performance-web-frontend Performance Web Frontend by Ayumu Sato"},
+    {"word": "Webフロントエンドパフォーマンスチューニング", "url": "https://speakerdeck.com/h13i32maru/webhurontoendopahuomansutiyuningu by Ryo Maruyama"},
+    {"word": "Chrome", "url": "https://developers.google.com/chrome-developer-tools/?hl=ja DevTools"},
+    {"word": "Effectively", "url": "http://www.html5rocks.com/ja/tutorials/memory/effectivemanagement/ Managing Memory at Gmail scale"},
+    {"word": "skia", "url": "https://code.google.com/p/skia/"},
+    {"word": "MDN", "url": "https://developer.mozilla.org/ja/"},
+    {"word": "Knockout", "url": "http://www.slideshare.net/kentaroiizuka/knockout-javascript を用いた大規模 JavaScript 開発"},
+    {"word": "JavaScriptフロントエンド開発の昨今", "url": "https://speakerdeck.com/naoya/javascripthurontoendokai-fa-falsezuo-jin by Naoya Ito"},
+    {"word": "ブログを書くまでがHTML5", "url": "http://blog.h13i32maru.jp/entry/2013/12/09/110029 Conference 2013"}
+  ]
+}

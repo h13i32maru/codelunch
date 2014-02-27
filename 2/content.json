@@ -1,0 +1,20 @@
+{
+  "vol": 2,
+  "track": "131455363",
+  "date": "2014/01/26",
+  "title": "Go言語",
+  "text": "今回は@tenntennさんに来て頂いてGo言語について話をしました。",
+  "words": [
+    {"word": "今年の目標"},
+    {"word": "なぜGoogleがGo言語を開発したのか？", "url": "http://golang.jp/go_faq#Origins"},
+    {"word": "Goで作られているプロダクト", "url": "http://en.wikipedia.org/w/index.php?title=Go_(programming_language)#Projects_and_organizations_using_Go"},
+    {"word": "なぜtenntennさんがGo言語をはじめたのか？", "url": "http://www.slideshare.net/takuyaueda967/goroutinechannelgogolang/9"},
+    {"word": "Gopher AA ʕ ◔ϖ◔ʔ", "url": "https://twitter.com/tenntenn/status/211730477793542144"},
+    {"word": "A Tour of Go", "url": "http://go-tour-jp.appspot.com/#1"},
+    {"word": "Goroutine", "url": "http://go-tour-jp.appspot.com/#63"},
+    {"word": "The Go scheduler", "url": "http://morsmachine.dk/go-scheduler"},
+    {"word": "Channel", "url": "http://go-tour-jp.appspot.com/#64"},
+    {"word": "Interface", "url": "http://go-tour-jp.appspot.com/#53"},
+    {"word": "GoOracle", "url": "http://golang.org/s/oracle-user-manual"}
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "author" : "h13i32maru",
+  "name" : "CodeLunchHTMLBuilder",
+  "description" : "Build Code Lunch HTML from JSON",
+  "version" : "0.0.1",
+  "devDependencies" : {
+    "jsdom": ""
+  }
+}
