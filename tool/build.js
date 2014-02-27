@@ -13,6 +13,59 @@
  */
 // ---- end ----
 
+var IndexBuilder = {
+  build: function(templateHTMLFilePath, volumesDirPath, callback) {
+    var fs = require('fs');
+    var volumeFilePaths = fs.readdirSync(volumesDirPath).reverse();
+    var templateHTML = fs.readFileSync(templateHTMLFilePath, 'utf-8');
+
+    var volumes = [];
+    for (var i = 0; i < volumeFilePaths.length; i++) {
+      var volumeJSON = fs.readFileSync(volumesDirPath + '/' + volumeFilePaths[i]);
+      var volume = JSON.parse(volumeJSON);
+      volumes.push(volume);
+    }
+
+    var jsdom = require('jsdom');
+    jsdom.env(templateHTML, [], function(errors, window){
+      if (errors) {
+        console.error(errors);
+        return;
+      }
+
+      var html = this._inject(volumes, window);
+      callback(html);
+    }.bind(this));
+  },
+
+  /**
+   *
+   * @param {Volume[]} volumes
+   * @param window
+   * @private
+   */
+  _inject: function(volumes, window) {
+    var docBody = window.document.querySelector('#cl-doc-body');
+    var rowTemplate = docBody.children[0].cloneNode(true);
+    docBody.innerHTML = '';
+
+    for (var i = 0; i < volumes.length; i++) {
+      var volume = volumes[i];
+      var row = rowTemplate.cloneNode(true);
+      row.querySelector('#cl-link').href = volume.vol;
+      row.querySelector('#cl-title').textContent = volume.title;
+      row.querySelector('#cl-vol-number').textContent = volume.vol;
+      row.querySelector('#cl-date').textContent = volume.date;
+      row.querySelector('#cl-text').textContent = volume.text;
+
+      row.innerHTML += '\n';
+      docBody.appendChild(row);
+    }
+
+    return window.document.innerHTML;
+  }
+};
+
 var VolumeBuilder = {
   _fs: require('fs'),
   _jsdom: require('jsdom'),
@@ -105,24 +158,24 @@ var VolumeBuilder = {
   }
 };
 
-function printHelp() {
-  var name = path.basename(process.argv[1]);
-  console.log('usage: ' + name + ' 1/content.json');
-}
-
 // parse command line arguments
 var argv = process.argv;
 var volumesDirPath;
+var indexTemplatePath;
+var volumeTemplatePath;
 for (var i = 2; i < argv.length; i++) {
   switch (argv[i]) {
   case '--help':
     // fall through
   case '-h':
-    printHelp();
+    var name = path.basename(process.argv[1]);
+    console.log('usage: ' + name + ' index_template.html volume_template.html volumes_dir');
     process.exit(0);
     break;
   default:
-    volumesDirPath = argv[i];
+    indexTemplatePath = argv[i++];
+    volumeTemplatePath = argv[i++];
+    volumesDirPath = argv[i++];
     break;
   }
 }
@@ -130,12 +183,16 @@ for (var i = 2; i < argv.length; i++) {
 var path = require('path');
 var fs = require('fs');
 
-var selfPath = process.argv[1];
-var selfDir = path.dirname(selfPath);
-var templateHTMLFilePath = selfDir + '/template.html';
 var outputRootDirPath = path.dirname(volumesDirPath);
 
-VolumeBuilder.build(templateHTMLFilePath, volumesDirPath, function(volume, html){
+IndexBuilder.build(indexTemplatePath, volumesDirPath, function(html){
+  var outputFilePath = outputRootDirPath + '/index.html';
+  fs.writeFileSync(outputFilePath, html);
+
+  console.log('done: index');
+});
+
+VolumeBuilder.build(volumeTemplatePath, volumesDirPath, function(volume, html){
   var outputDirPath = outputRootDirPath + '/' + volume.vol;
   var outputFilePath = outputDirPath + '/index.html';
 
@@ -147,3 +204,4 @@ VolumeBuilder.build(templateHTMLFilePath, volumesDirPath, function(volume, html)
 
   console.log('done: ' + volume.vol);
 });
+
