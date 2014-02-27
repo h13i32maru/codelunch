@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+  <channel>
+    <title><![CDATA[Code Lunch]]></title>
+    <description><![CDATA[Code Lunch]]></description>
+    <link>http://codelunch.fm</link>
+    <generator>RSS for Node</generator>
+    <lastBuildDate>Thu, 27 Feb 2014 09:19:17 GMT</lastBuildDate>
+    <atom:link href="http://codelunch.fm/rss.xml" rel="self" type="application/rss+xml"/>
+    <author><![CDATA[h13i32maru]]></author>
+    <item>
+      <title><![CDATA[Go言語]]></title>
+      <description><![CDATA[今回は@tenntennさんに来て頂いてGo言語について話をしました。]]></description>
+      <link>http://codelunch.fm/2</link>
+      <guid isPermaLink="false">http://codelunch.fm/2</guid>
+      <dc:creator><![CDATA[h13i32maru]]></dc:creator>
+      <pubDate>Sat, 25 Jan 2014 15:00:00 GMT</pubDate>
+    </item>
+    <item>
+      <title><![CDATA[Webフロントエンド]]></title>
+      <description><![CDATA[@iizukakと@h13i32maruの二人でWebフロントエンドを中心とした話をしました。]]></description>
+      <link>http://codelunch.fm/1</link>
+      <guid isPermaLink="false">http://codelunch.fm/1</guid>
+      <dc:creator><![CDATA[h13i32maru]]></dc:creator>
+      <pubDate>Sat, 14 Dec 2013 15:00:00 GMT</pubDate>
+    </item>
+  </channel>
+</rss>
