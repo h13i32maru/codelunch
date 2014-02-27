@@ -95,6 +95,14 @@ a {
 }
 
 /* for doc body */
+
+@media (min-height: 1000px) {
+  /* 高解像度端末向けにフッターが一番下に来るように最低限の高さを確保 */
+  .cl-doc-body-outer {
+    min-height: 738px;
+  }
+}
+
 .cl-doc-body {
   background-color: #fff;
   margin: 16px auto 48px;
