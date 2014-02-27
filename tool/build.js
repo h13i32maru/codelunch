@@ -9,77 +9,99 @@
  *   title: string,
  *   text: string,
  *   words: {word: string, url: string}[]
- * }} Content
+ * }} Volume
  */
 // ---- end ----
 
-var Builder = {
-  build: function(templateHTMLFilePath, contentJSONFilePath, callback) {
-    var fs = require('fs');
-    var templateHTML = fs.readFileSync(templateHTMLFilePath, 'utf-8');
+var VolumeBuilder = {
+  _fs: require('fs'),
+  _jsdom: require('jsdom'),
 
-    var contentJSON = fs.readFileSync(contentJSONFilePath);
-    var content = JSON.parse(contentJSON);
+  _volumesDirPath: null,
+  _volumeFilePaths: null,
+  _templateHTML: null,
+  _callback: null,
 
-    this._inject(content, templateHTML, callback);
+  build: function(templateHTMLFilePath, volumesDirPath, callback) {
+    this._volumesDirPath = volumesDirPath;
+    this._volumeFilePaths = fs.readdirSync(volumesDirPath);
+    this._templateHTML = this._fs.readFileSync(templateHTMLFilePath, 'utf-8');
+    this._callback = callback;
+
+    this._buildEachVolume();
+  },
+
+  _buildEachVolume: function() {
+    if (this._volumeFilePaths.length === 0) {
+      return;
+    }
+
+    var volumeFilePath = this._volumeFilePaths.shift();
+    var volumeJSON = this._fs.readFileSync(this._volumesDirPath + '/' + volumeFilePath);
+    var volume = JSON.parse(volumeJSON);
+
+    this._jsdom.env(this._templateHTML, [], function(errors, window){
+      if (errors) {
+        console.errors(errors);
+        return;
+      }
+
+      var html = this._injectVolumeToHTML(volume, window);
+
+      this._callback(volume, html);
+
+      this._buildEachVolume();
+
+    }.bind(this));
   },
 
   /**
    *
-   * @param {Content} content
-   * @param templateHTML
-   * @param callback
+   * @param {Volume} volume
+   * @param window
+   * @returns {string}
    * @private
    */
-  _inject: function(content, templateHTML, callback){
-    var jsdom = require('jsdom');
-    jsdom.env(
-      templateHTML,
-      [],
-      function (errors, window) {
-        if (errors) {
-          console.error(errors);
-          return;
-        }
+  _injectVolumeToHTML: function(volume, window) {
+    var vol = window.document.querySelector('#cl-vol-number');
+    vol.textContent = volume.vol;
 
-        var vol = window.document.querySelector('#cl-vol-number');
-        vol.textContent = content.vol;
+    var iframe = window.document.querySelector('#cl-sound-cloud iframe');
+    iframe.src = iframe.src.replace(/[/]tracks[/][0-9]+/, '/tracks/' + volume.track);
 
-        var iframe = window.document.querySelector('#cl-sound-cloud iframe');
-        iframe.src = iframe.src.replace(/[/]tracks[/][0-9]+/, '/tracks/' + content.track);
+    var date = window.document.querySelector('#cl-date');
+    date.textContent = volume.date;
 
-        var date = window.document.querySelector('#cl-date');
-        date.textContent = content.date;
+    var title = window.document.querySelector('#cl-title');
+    title.textContent = volume.title;
 
-        var title = window.document.querySelector('#cl-title');
-        title.textContent = content.title;
+    var text = window.document.querySelector('#cl-text');
+    // @hogeな文字列をtwitterへのリンクに置換する.
+    text.innerHTML = volume.text.replace(/@([0-9a-zA-Z_]+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
 
-        var text = window.document.querySelector('#cl-text');
-        // @hogeな文字列をtwitterへのリンクに置換する.
-        text.innerHTML = content.text.replace(/@([0-9a-zA-Z_]+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
+    var words = window.document.querySelector('#cl-related-words');
+    var rowTemplate = words.children[0].cloneNode(true);
+    words.innerHTML = '';
 
-        var words = window.document.querySelector('#cl-related-words');
-        var rowTemplate = words.children[0].cloneNode(true);
-        words.innerHTML = '';
+    for (var i = 0; i < volume.words.length; i++) {
+      var row = rowTemplate.cloneNode(true);
+      var a = row.querySelector('a');
 
-        for (var i = 0; i < content.words.length; i++) {
-          var row = rowTemplate.cloneNode(true);
-          var a = row.querySelector('a');
-
-          if (content.words[i].url) {
-            a.href = content.words[i].url || "";
-          } else {
-            a.removeAttribute('href');
-          }
-
-          a.textContent = content.words[i].word;
-          words.innerHTML += '\n';
-          words.appendChild(row);
-        }
-
-        callback && callback(window.document.innerHTML);
+      if (volume.words[i].url) {
+        a.href = volume.words[i].url || "";
+      } else {
+        a.removeAttribute('href');
       }
-    );
+
+      a.textContent = volume.words[i].word;
+      words.innerHTML += '\n';
+      words.appendChild(row);
+    }
+
+    var html = window.document.innerHTML;
+    window.close();
+
+    return html;
   }
 };
 
@@ -90,7 +112,7 @@ function printHelp() {
 
 // parse command line arguments
 var argv = process.argv;
-var contentJSONFilePath;
+var volumesDirPath;
 for (var i = 2; i < argv.length; i++) {
   switch (argv[i]) {
   case '--help':
@@ -100,19 +122,28 @@ for (var i = 2; i < argv.length; i++) {
     process.exit(0);
     break;
   default:
-    contentJSONFilePath = argv[i];
+    volumesDirPath = argv[i];
     break;
   }
 }
 
 var path = require('path');
+var fs = require('fs');
+
 var selfPath = process.argv[1];
 var selfDir = path.dirname(selfPath);
 var templateHTMLFilePath = selfDir + '/template.html';
-var outputHTMLFilePath = path.dirname(contentJSONFilePath) + '/index.html';
+var outputRootDirPath = path.dirname(volumesDirPath);
 
-Builder.build(templateHTMLFilePath, contentJSONFilePath, function(html){
-  var fs = require('fs');
-  fs.writeFileSync(outputHTMLFilePath, html);
-  console.log('done');
+VolumeBuilder.build(templateHTMLFilePath, volumesDirPath, function(volume, html){
+  var outputDirPath = outputRootDirPath + '/' + volume.vol;
+  var outputFilePath = outputDirPath + '/index.html';
+
+  if (!fs.existsSync(outputDirPath)) {
+    fs.mkdirSync(outputDirPath);
+  }
+
+  fs.writeFileSync(outputFilePath, html);
+
+  console.log('done: ' + volume.vol);
 });
