@@ -68,7 +68,7 @@ var IndexBuilder = {
       row.querySelector('#cl-title').textContent = volume.title;
       row.querySelector('#cl-vol-number').textContent = volume.vol;
       row.querySelector('#cl-date').textContent = volume.date;
-      row.querySelector('#cl-text').innerHTML = Util.replaceTwitter(volume.text);
+      row.querySelector('#cl-text').innerHTML = volume.text;
 
       row.innerHTML += '\n';
       docBody.appendChild(row);
