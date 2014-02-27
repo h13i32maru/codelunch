@@ -13,6 +13,21 @@
  */
 // ---- end ----
 
+var Util = {
+  getVolumes: function(volumesDirPath) {
+    var fs = require('fs');
+    var volumeFilePaths = fs.readdirSync(volumesDirPath).reverse();
+    var volumes = [];
+    for (var i = 0; i < volumeFilePaths.length; i++) {
+      var volumeJSON = fs.readFileSync(volumesDirPath + '/' + volumeFilePaths[i]);
+      var volume = JSON.parse(volumeJSON);
+      volumes.push(volume);
+    }
+
+    return volumes;
+  }
+};
+
 var IndexBuilder = {
   build: function(templateHTMLFilePath, volumesDirPath, callback) {
     var fs = require('fs');
@@ -158,6 +173,33 @@ var VolumeBuilder = {
   }
 };
 
+var RSSBuilder = {
+  build: function(volumesDirPath) {
+    var RSS = require('rss');
+    var feed = new RSS({
+      title: 'Code Lunch',
+      feed_url: 'http://codelunch.fm/rss.xml',
+      site_url: 'http://codelunch.fm',
+      author: 'h13i32maru'
+    });
+
+    var volumes = Util.getVolumes(volumesDirPath);
+    for (var i = 0; i < volumes.length; i++) {
+      var volume = volumes[i];
+      var url = 'http://codelunch.fm/' + volume.vol;
+      feed.item({
+        title: volume.title,
+        description: volume.text,
+        url: url,
+        guid: url,
+        date: volume.date
+      });
+    }
+
+    return feed.xml('  ');
+  }
+};
+
 // ---- main ----
 
 var path = require('path');
@@ -188,6 +230,13 @@ var volumesDirPath = rootDirPath + '/volumes';
 var indexTemplatePath = rootDirPath + '/template/index.html';
 var volumeTemplatePath = rootDirPath + '/template/volume.html';
 
+// rss
+var rss = RSSBuilder.build(volumesDirPath);
+var outputFilePath = rootDirPath + '/rss.xml';
+fs.writeFileSync(outputFilePath, rss);
+console.log('done: rss');
+
+// index.html
 IndexBuilder.build(indexTemplatePath, volumesDirPath, function(html){
   var outputFilePath = rootDirPath + '/index.html';
   fs.writeFileSync(outputFilePath, html);
@@ -195,6 +244,7 @@ IndexBuilder.build(indexTemplatePath, volumesDirPath, function(html){
   console.log('done: index');
 });
 
+// volume/index.html
 VolumeBuilder.build(volumeTemplatePath, volumesDirPath, function(volume, html){
   var outputDirPath = rootDirPath + '/' + volume.vol;
   var outputFilePath = outputDirPath + '/index.html';
