@@ -1,0 +1,19 @@
+{
+  "vol": 3,
+  "track": "137003095",
+  "date": "2014/02/23",
+  "title": "NaN-BoxingによるJavaScriptの最適化",
+  "text": "今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。",
+  "words": [
+    {"word": "Cマウント TV 1.4レンズ"},
+    {"word": "hnwの日記", "url": "http://d.hatena.ne.jp/hnw/"},
+    {"word": "PHPバグレポート", "url": "https://bugs.php.net/bug.php?id=45712"},
+    {"word": "デリー", "url": "http://www.delhi.co.jp/"},
+    {"word": "IEEE754", "url": "http://ja.wikipedia.org/wiki/IEEE_754"},
+    {"word": "10進数小数", "url": "http://d.hatena.ne.jp/hnw/20131231"},
+    {"word": "The Number Type", "url": "http://www.ecma-international.org/ecma-262/5.1/#sec-8.5"},
+    {"word": "value representation in javascript implementations", "url": "http://wingolog.org/archives/2011/05/18/value-representation-in-javascript-implementations"},
+    {"word": "Virtual address space details", "url": "http://en.wikipedia.org/wiki/X86-64#Virtual_address_space_details"},
+    {"word": "JavaScriptCore JSValue", "url": "https://trac.webkit.org/browser/releases/WebKitGTK/webkit-2.3.5/Source/JavaScriptCore/runtime/JSCJSValue.h"}
+  ]
+}

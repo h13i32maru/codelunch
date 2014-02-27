@@ -5,9 +5,17 @@
     <description><![CDATA[Code Lunch]]></description>
     <link>http://codelunch.fm</link>
     <generator>RSS for Node</generator>
-    <lastBuildDate>Thu, 27 Feb 2014 09:37:32 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 27 Feb 2014 10:33:07 GMT</lastBuildDate>
     <atom:link href="http://codelunch.fm/rss.xml" rel="self" type="application/rss+xml"/>
     <author><![CDATA[h13i32maru]]></author>
+    <item>
+      <title><![CDATA[NaN-BoxingによるJavaScriptの最適化]]></title>
+      <description><![CDATA[今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。]]></description>
+      <link>http://codelunch.fm/3</link>
+      <guid isPermaLink="false">http://codelunch.fm/3</guid>
+      <dc:creator><![CDATA[h13i32maru]]></dc:creator>
+      <pubDate>Sat, 22 Feb 2014 15:00:00 GMT</pubDate>
+    </item>
     <item>
       <title><![CDATA[Go言語]]></title>
       <description><![CDATA[今回は@tenntennさんに来て頂いてGo言語について話をしました。]]></description>
