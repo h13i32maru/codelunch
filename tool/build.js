@@ -4,6 +4,7 @@
 /**
  * @typedef {{
  *   vol: number,
+ *   track: string,
  *   date: string,
  *   title: string,
  *   text: string,
