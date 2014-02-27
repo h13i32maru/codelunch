@@ -55,7 +55,8 @@ var Builder = {
         title.textContent = content.title;
 
         var text = window.document.querySelector('#cl-text');
-        text.textContent = content.text;
+        // @hogeな文字列をtwitterへのリンクに置換する.
+        text.innerHTML = content.text.replace(/@([0-9a-zA-Z_]+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
 
         var words = window.document.querySelector('#cl-related-words');
         var rowTemplate = words.children[0].cloneNode(true);
