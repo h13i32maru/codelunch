@@ -158,6 +158,11 @@ var VolumeBuilder = {
   }
 };
 
+// ---- main ----
+
+var path = require('path');
+var fs = require('fs');
+
 // parse command line arguments
 var argv = process.argv;
 var volumesDirPath;
@@ -179,9 +184,6 @@ for (var i = 2; i < argv.length; i++) {
     break;
   }
 }
-
-var path = require('path');
-var fs = require('fs');
 
 var outputRootDirPath = path.dirname(volumesDirPath);
 
