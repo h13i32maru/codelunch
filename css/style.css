@@ -1,12 +1,6 @@
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
 body{
   padding: 0;
   margin: 0;
-  height: 100%;
   background-color: #f9f9f9;
 }
 
@@ -21,7 +15,7 @@ a {
 
 /* for grid system */
 .cl-container {
-  width: 712px;
+  max-width: 712px;
   margin: auto;
 }
 
@@ -100,15 +94,13 @@ a {
   background: #000 url("../image/key-visual.png") no-repeat;
 }
 
-/* for doc body */
-
-@media (min-height: 1000px) {
-  /* 高解像度端末向けにフッターが一番下に来るように最低限の高さを確保 */
-  .cl-doc-body-outer {
-    min-height: 100%;
+@media (max-width: 640px) {
+  .cl-doc-header {
+    zoom: 0.5;
   }
 }
 
+/* for doc body */
 .cl-doc-body {
   background-color: #fff;
   margin: 16px auto 48px;
@@ -123,7 +115,7 @@ a {
   margin: 0 20px;
   padding-left: 12px;
   padding-top: 8px;
-  height: 150px;
+  min-height: 150px;
   border-bottom: 1px solid #cfcfcf;
 }
 
@@ -134,7 +126,6 @@ a {
 .cl-doc-body section > a {
   display: block;
   width: 100%;
-  height: 100%;
   transition: 0.5s;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -153,6 +144,16 @@ a {
 
 .cl-doc-body section .cl-date {
   margin: 14px 0 0 8px;
+}
+
+@media (max-width: 640px) {
+  .cl-doc-body section .cl-title-outer {
+    /**
+     * モバイルでは横幅が小さいのでタイトルが入りきらず横にすごく伸びてしまう.
+     * そうすると、レイアウトが崩れてしまうので、80%を最大としておく
+     */
+    max-width: 80%;
+  }
 }
 
 .cl-doc-body section .cl-title {
@@ -219,6 +220,15 @@ footer.cl-doc-footer {
 
 footer.cl-doc-footer .cl-icon-logo {
   float: right;
+}
+
+@media (max-width: 640px) {
+  /* スマホの場合、フッターのアイコンを横並びは厳しいので縦にする */
+  footer.cl-doc-footer .cl-row [class^=cl-col] {
+    display: block;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 /* for copyright */
