@@ -204,14 +204,18 @@ var fs = require('fs');
 
 // parse command line arguments
 var argv = process.argv;
+var buildRSS = true;
 for (var i = 2; i < argv.length; i++) {
   switch (argv[i]) {
   case '--help':
     // fall through
   case '-h':
     var name = path.basename(process.argv[1]);
-    console.log('usage: ' + name);
+    console.log('usage: ' + name + ' [--no-rss]');
     process.exit(0);
+    break;
+  case '--no-rss':
+    buildRSS = false;
     break;
   default:
     indexTemplatePath = argv[i++];
@@ -228,10 +232,12 @@ var indexTemplatePath = rootDirPath + '/template/index.html';
 var volumeTemplatePath = rootDirPath + '/template/volume.html';
 
 // rss
-var rss = RSSBuilder.build(volumesDirPath);
-var outputFilePath = rootDirPath + '/rss.xml';
-fs.writeFileSync(outputFilePath, rss);
-console.log('done: rss');
+if (buildRSS) {
+  var rss = RSSBuilder.build(volumesDirPath);
+  var outputFilePath = rootDirPath + '/rss.xml';
+  fs.writeFileSync(outputFilePath, rss);
+  console.log('done: rss');
+}
 
 // index.html
 IndexBuilder.build(indexTemplatePath, volumesDirPath, function(html){
