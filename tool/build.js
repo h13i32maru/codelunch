@@ -165,16 +165,13 @@ var fs = require('fs');
 
 // parse command line arguments
 var argv = process.argv;
-var volumesDirPath;
-var indexTemplatePath;
-var volumeTemplatePath;
 for (var i = 2; i < argv.length; i++) {
   switch (argv[i]) {
   case '--help':
     // fall through
   case '-h':
     var name = path.basename(process.argv[1]);
-    console.log('usage: ' + name + ' index_template.html volume_template.html volumes_dir');
+    console.log('usage: ' + name);
     process.exit(0);
     break;
   default:
@@ -185,17 +182,21 @@ for (var i = 2; i < argv.length; i++) {
   }
 }
 
-var outputRootDirPath = path.dirname(volumesDirPath);
+var selfDirPath = path.dirname(process.argv[1]);
+var rootDirPath = selfDirPath + '/../';
+var volumesDirPath = rootDirPath + '/volumes';
+var indexTemplatePath = rootDirPath + '/template/index.html';
+var volumeTemplatePath = rootDirPath + '/template/volume.html';
 
 IndexBuilder.build(indexTemplatePath, volumesDirPath, function(html){
-  var outputFilePath = outputRootDirPath + '/index.html';
+  var outputFilePath = rootDirPath + '/index.html';
   fs.writeFileSync(outputFilePath, html);
 
   console.log('done: index');
 });
 
 VolumeBuilder.build(volumeTemplatePath, volumesDirPath, function(volume, html){
-  var outputDirPath = outputRootDirPath + '/' + volume.vol;
+  var outputDirPath = rootDirPath + '/' + volume.vol;
   var outputFilePath = outputDirPath + '/index.html';
 
   if (!fs.existsSync(outputDirPath)) {
