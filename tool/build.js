@@ -25,21 +25,18 @@ var Util = {
     }
 
     return volumes;
+  },
+
+  replaceTwitter: function(text) {
+    return text.replace(/@([0-9a-zA-Z_]+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
   }
 };
 
 var IndexBuilder = {
   build: function(templateHTMLFilePath, volumesDirPath, callback) {
     var fs = require('fs');
-    var volumeFilePaths = fs.readdirSync(volumesDirPath).reverse();
     var templateHTML = fs.readFileSync(templateHTMLFilePath, 'utf-8');
-
-    var volumes = [];
-    for (var i = 0; i < volumeFilePaths.length; i++) {
-      var volumeJSON = fs.readFileSync(volumesDirPath + '/' + volumeFilePaths[i]);
-      var volume = JSON.parse(volumeJSON);
-      volumes.push(volume);
-    }
+    var volumes = Util.getVolumes(volumesDirPath);
 
     var jsdom = require('jsdom');
     jsdom.env(templateHTML, [], function(errors, window){
@@ -71,7 +68,7 @@ var IndexBuilder = {
       row.querySelector('#cl-title').textContent = volume.title;
       row.querySelector('#cl-vol-number').textContent = volume.vol;
       row.querySelector('#cl-date').textContent = volume.date;
-      row.querySelector('#cl-text').textContent = volume.text;
+      row.querySelector('#cl-text').textContent = Util.replaceTwitter(volume.text);
 
       row.innerHTML += '\n';
       docBody.appendChild(row);
@@ -85,14 +82,12 @@ var VolumeBuilder = {
   _fs: require('fs'),
   _jsdom: require('jsdom'),
 
-  _volumesDirPath: null,
-  _volumeFilePaths: null,
+  _volumes: null,
   _templateHTML: null,
   _callback: null,
 
   build: function(templateHTMLFilePath, volumesDirPath, callback) {
-    this._volumesDirPath = volumesDirPath;
-    this._volumeFilePaths = fs.readdirSync(volumesDirPath);
+    this._volumes = Util.getVolumes(volumesDirPath);
     this._templateHTML = this._fs.readFileSync(templateHTMLFilePath, 'utf-8');
     this._callback = callback;
 
@@ -100,13 +95,11 @@ var VolumeBuilder = {
   },
 
   _buildEachVolume: function() {
-    if (this._volumeFilePaths.length === 0) {
+    if (this._volumes.length === 0) {
       return;
     }
 
-    var volumeFilePath = this._volumeFilePaths.shift();
-    var volumeJSON = this._fs.readFileSync(this._volumesDirPath + '/' + volumeFilePath);
-    var volume = JSON.parse(volumeJSON);
+    var volume = this._volumes.shift();
 
     this._jsdom.env(this._templateHTML, [], function(errors, window){
       if (errors) {
@@ -145,7 +138,7 @@ var VolumeBuilder = {
 
     var text = window.document.querySelector('#cl-text');
     // @hogeな文字列をtwitterへのリンクに置換する.
-    text.innerHTML = volume.text.replace(/@([0-9a-zA-Z_]+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
+    text.innerHTML = Util.replaceTwitter(volume.text);
 
     var words = window.document.querySelector('#cl-related-words');
     var rowTemplate = words.children[0].cloneNode(true);
@@ -174,19 +167,23 @@ var VolumeBuilder = {
 };
 
 var RSSBuilder = {
+  SITE_URL: 'http://codelunch.fm',
+  FEED_URL: 'http://codelunch.fm/rss.xml',
+  AUTHOR: 'h13i32maru',
+
   build: function(volumesDirPath) {
     var RSS = require('rss');
     var feed = new RSS({
       title: 'Code Lunch',
-      feed_url: 'http://codelunch.fm/rss.xml',
-      site_url: 'http://codelunch.fm',
-      author: 'h13i32maru'
+      feed_url: this.FEED_URL,
+      site_url: this.SITE_URL,
+      author: this.AUTHOR
     });
 
     var volumes = Util.getVolumes(volumesDirPath);
     for (var i = 0; i < volumes.length; i++) {
       var volume = volumes[i];
-      var url = 'http://codelunch.fm/' + volume.vol;
+      var url = this.SITE_URL + '/' + volume.vol;
       feed.item({
         title: volume.title,
         description: volume.text,
