@@ -174,7 +174,7 @@ var RSSBuilder = {
   build: function(volumesDirPath) {
     var RSS = require('rss');
     var feed = new RSS({
-      title: 'Code Lunch',
+      title: 'Code Lunch Podcast',
       feed_url: this.FEED_URL,
       site_url: this.SITE_URL,
       author: this.AUTHOR
@@ -184,12 +184,14 @@ var RSSBuilder = {
     for (var i = 0; i < volumes.length; i++) {
       var volume = volumes[i];
       var url = this.SITE_URL + '/' + volume.vol;
+      var download = this.SITE_URL + '/download/episode' + volume.vol + '.mp3';
       feed.item({
         title: volume.title,
         description: volume.text,
         url: url,
         guid: url,
-        date: volume.date
+        date: volume.date,
+        enclosure: {url: download}
       });
     }
 
