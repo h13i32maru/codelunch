@@ -3,7 +3,7 @@
 // ---- type annotation ----
 /**
  * @typedef {{
- *   vol: number,
+ *   ep: number,
  *   track: string,
  *   date: string,
  *   title: string,
@@ -64,9 +64,9 @@ var IndexBuilder = {
     for (var i = 0; i < episodes.length; i++) {
       var episode = episodes[i];
       var row = rowTemplate.cloneNode(true);
-      row.querySelector('#cl-link').href = episode.vol;
+      row.querySelector('#cl-link').href = episode.ep;
       row.querySelector('#cl-title').textContent = episode.title;
-      row.querySelector('#cl-vol-number').textContent = episode.vol;
+      row.querySelector('#cl-vol-number').textContent = episode.ep;
       row.querySelector('#cl-date').textContent = episode.date;
       row.querySelector('#cl-text').innerHTML = episode.text;
 
@@ -125,7 +125,7 @@ var EpisodeBuilder = {
    */
   _injectEpisodeToHTML: function(episode, window) {
     var vol = window.document.querySelector('#cl-vol-number');
-    vol.textContent = episode.vol;
+    vol.textContent = episode.ep;
 
     var iframe = window.document.querySelector('#cl-sound-cloud iframe');
     iframe.src = iframe.src.replace(/[/]tracks[/][0-9]+/, '/tracks/' + episode.track);
@@ -183,8 +183,8 @@ var RSSBuilder = {
     var episodes = Util.getEpisodes(episodesDirPath);
     for (var i = 0; i < episodes.length; i++) {
       var episode = episodes[i];
-      var url = this.SITE_URL + '/' + episode.vol;
-      var download = this.SITE_URL + '/download/episode' + episode.vol + '.mp3';
+      var url = this.SITE_URL + '/' + episode.ep;
+      var download = this.SITE_URL + '/download/episode' + episode.ep + '.mp3';
       feed.item({
         title: episode.title,
         description: episode.text,
@@ -251,7 +251,7 @@ IndexBuilder.build(indexTemplatePath, episodesDirPath, function(html){
 
 // episode/index.html
 EpisodeBuilder.build(episodeTemplatePath, episodesDirPath, function(episode, html){
-  var outputDirPath = rootDirPath + '/' + episode.vol;
+  var outputDirPath = rootDirPath + '/' + episode.ep;
   var outputFilePath = outputDirPath + '/index.html';
 
   if (!fs.existsSync(outputDirPath)) {
@@ -260,6 +260,6 @@ EpisodeBuilder.build(episodeTemplatePath, episodesDirPath, function(episode, htm
 
   fs.writeFileSync(outputFilePath, html);
 
-  console.log('done: ' + episode.vol);
+  console.log('done: ' + episode.ep);
 });
 
