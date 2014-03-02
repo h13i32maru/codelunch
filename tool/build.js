@@ -229,9 +229,9 @@ for (var i = 2; i < argv.length; i++) {
 
 var selfDirPath = path.dirname(process.argv[1]);
 var rootDirPath = selfDirPath + '/../';
-var volumesDirPath = rootDirPath + '/volumes';
+var volumesDirPath = rootDirPath + '/episodes';
 var indexTemplatePath = rootDirPath + '/template/index.html';
-var volumeTemplatePath = rootDirPath + '/template/volume.html';
+var volumeTemplatePath = rootDirPath + '/template/episode.html';
 
 // rss
 if (buildRSS) {
