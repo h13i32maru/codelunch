@@ -9,22 +9,22 @@
  *   title: string,
  *   text: string,
  *   words: {word: string, url: string}[]
- * }} Volume
+ * }} Episode
  */
 // ---- end ----
 
 var Util = {
-  getVolumes: function(volumesDirPath) {
+  getEpisodes: function(episodesDirPath) {
     var fs = require('fs');
-    var volumeFilePaths = fs.readdirSync(volumesDirPath).reverse();
-    var volumes = [];
-    for (var i = 0; i < volumeFilePaths.length; i++) {
-      var volumeJSON = fs.readFileSync(volumesDirPath + '/' + volumeFilePaths[i]);
-      var volume = JSON.parse(volumeJSON);
-      volumes.push(volume);
+    var episodeFilePaths = fs.readdirSync(episodesDirPath).reverse();
+    var episodes = [];
+    for (var i = 0; i < episodeFilePaths.length; i++) {
+      var episodeJSON = fs.readFileSync(episodesDirPath + '/' + episodeFilePaths[i]);
+      var episode = JSON.parse(episodeJSON);
+      episodes.push(episode);
     }
 
-    return volumes;
+    return episodes;
   },
 
   replaceTwitter: function(text) {
@@ -33,10 +33,10 @@ var Util = {
 };
 
 var IndexBuilder = {
-  build: function(templateHTMLFilePath, volumesDirPath, callback) {
+  build: function(templateHTMLFilePath, episodesDirPath, callback) {
     var fs = require('fs');
     var templateHTML = fs.readFileSync(templateHTMLFilePath, 'utf-8');
-    var volumes = Util.getVolumes(volumesDirPath);
+    var episodes = Util.getEpisodes(episodesDirPath);
 
     var jsdom = require('jsdom');
     jsdom.env(templateHTML, [], function(errors, window){
@@ -45,30 +45,30 @@ var IndexBuilder = {
         return;
       }
 
-      var html = this._inject(volumes, window);
+      var html = this._inject(episodes, window);
       callback(html);
     }.bind(this));
   },
 
   /**
    *
-   * @param {Volume[]} volumes
+   * @param {Episode[]} episodes
    * @param window
    * @private
    */
-  _inject: function(volumes, window) {
+  _inject: function(episodes, window) {
     var docBody = window.document.querySelector('#cl-doc-body');
     var rowTemplate = docBody.children[0].cloneNode(true);
     docBody.innerHTML = '';
 
-    for (var i = 0; i < volumes.length; i++) {
-      var volume = volumes[i];
+    for (var i = 0; i < episodes.length; i++) {
+      var episode = episodes[i];
       var row = rowTemplate.cloneNode(true);
-      row.querySelector('#cl-link').href = volume.vol;
-      row.querySelector('#cl-title').textContent = volume.title;
-      row.querySelector('#cl-vol-number').textContent = volume.vol;
-      row.querySelector('#cl-date').textContent = volume.date;
-      row.querySelector('#cl-text').innerHTML = volume.text;
+      row.querySelector('#cl-link').href = episode.vol;
+      row.querySelector('#cl-title').textContent = episode.title;
+      row.querySelector('#cl-vol-number').textContent = episode.vol;
+      row.querySelector('#cl-date').textContent = episode.date;
+      row.querySelector('#cl-text').innerHTML = episode.text;
 
       row.innerHTML += '\n';
       docBody.appendChild(row);
@@ -78,28 +78,28 @@ var IndexBuilder = {
   }
 };
 
-var VolumeBuilder = {
+var EpisodeBuilder = {
   _fs: require('fs'),
   _jsdom: require('jsdom'),
 
-  _volumes: null,
+  _episodes: null,
   _templateHTML: null,
   _callback: null,
 
-  build: function(templateHTMLFilePath, volumesDirPath, callback) {
-    this._volumes = Util.getVolumes(volumesDirPath);
+  build: function(templateHTMLFilePath, episodesDirPath, callback) {
+    this._episodes = Util.getEpisodes(episodesDirPath);
     this._templateHTML = this._fs.readFileSync(templateHTMLFilePath, 'utf-8');
     this._callback = callback;
 
-    this._buildEachVolume();
+    this._buildEachEpisode();
   },
 
-  _buildEachVolume: function() {
-    if (this._volumes.length === 0) {
+  _buildEachEpisode: function() {
+    if (this._episodes.length === 0) {
       return;
     }
 
-    var volume = this._volumes.shift();
+    var episode = this._episodes.shift();
 
     this._jsdom.env(this._templateHTML, [], function(errors, window){
       if (errors) {
@@ -107,54 +107,54 @@ var VolumeBuilder = {
         return;
       }
 
-      var html = this._injectVolumeToHTML(volume, window);
+      var html = this._injectEpisodeToHTML(episode, window);
 
-      this._callback(volume, html);
+      this._callback(episode, html);
 
-      this._buildEachVolume();
+      this._buildEachEpisode();
 
     }.bind(this));
   },
 
   /**
    *
-   * @param {Volume} volume
+   * @param {Episode} episode
    * @param window
    * @returns {string}
    * @private
    */
-  _injectVolumeToHTML: function(volume, window) {
+  _injectEpisodeToHTML: function(episode, window) {
     var vol = window.document.querySelector('#cl-vol-number');
-    vol.textContent = volume.vol;
+    vol.textContent = episode.vol;
 
     var iframe = window.document.querySelector('#cl-sound-cloud iframe');
-    iframe.src = iframe.src.replace(/[/]tracks[/][0-9]+/, '/tracks/' + volume.track);
+    iframe.src = iframe.src.replace(/[/]tracks[/][0-9]+/, '/tracks/' + episode.track);
 
     var date = window.document.querySelector('#cl-date');
-    date.textContent = volume.date;
+    date.textContent = episode.date;
 
     var title = window.document.querySelector('#cl-title');
-    title.textContent = volume.title;
+    title.textContent = episode.title;
 
     var text = window.document.querySelector('#cl-text');
     // @hogeな文字列をtwitterへのリンクに置換する.
-    text.innerHTML = Util.replaceTwitter(volume.text);
+    text.innerHTML = Util.replaceTwitter(episode.text);
 
     var words = window.document.querySelector('#cl-related-words');
     var rowTemplate = words.children[0].cloneNode(true);
     words.innerHTML = '';
 
-    for (var i = 0; i < volume.words.length; i++) {
+    for (var i = 0; i < episode.words.length; i++) {
       var row = rowTemplate.cloneNode(true);
       var a = row.querySelector('a');
 
-      if (volume.words[i].url) {
-        a.href = volume.words[i].url || "";
+      if (episode.words[i].url) {
+        a.href = episode.words[i].url || "";
       } else {
         a.removeAttribute('href');
       }
 
-      a.textContent = volume.words[i].word;
+      a.textContent = episode.words[i].word;
       words.innerHTML += '\n';
       words.appendChild(row);
     }
@@ -171,7 +171,7 @@ var RSSBuilder = {
   FEED_URL: 'http://codelunch.fm/rss.xml',
   AUTHOR: 'h13i32maru',
 
-  build: function(volumesDirPath) {
+  build: function(episodesDirPath) {
     var RSS = require('rss');
     var feed = new RSS({
       title: 'Code Lunch Podcast',
@@ -180,17 +180,17 @@ var RSSBuilder = {
       author: this.AUTHOR
     });
 
-    var volumes = Util.getVolumes(volumesDirPath);
-    for (var i = 0; i < volumes.length; i++) {
-      var volume = volumes[i];
-      var url = this.SITE_URL + '/' + volume.vol;
-      var download = this.SITE_URL + '/download/episode' + volume.vol + '.mp3';
+    var episodes = Util.getEpisodes(episodesDirPath);
+    for (var i = 0; i < episodes.length; i++) {
+      var episode = episodes[i];
+      var url = this.SITE_URL + '/' + episode.vol;
+      var download = this.SITE_URL + '/download/episode' + episode.vol + '.mp3';
       feed.item({
-        title: volume.title,
-        description: volume.text,
+        title: episode.title,
+        description: episode.text,
         url: url,
         guid: url,
-        date: volume.date,
+        date: episode.date,
         enclosure: {url: download}
       });
     }
@@ -221,37 +221,37 @@ for (var i = 2; i < argv.length; i++) {
     break;
   default:
     indexTemplatePath = argv[i++];
-    volumeTemplatePath = argv[i++];
-    volumesDirPath = argv[i++];
+    episodeTemplatePath = argv[i++];
+    episodesDirPath = argv[i++];
     break;
   }
 }
 
 var selfDirPath = path.dirname(process.argv[1]);
 var rootDirPath = selfDirPath + '/../';
-var volumesDirPath = rootDirPath + '/episodes';
+var episodesDirPath = rootDirPath + '/episodes';
 var indexTemplatePath = rootDirPath + '/template/index.html';
-var volumeTemplatePath = rootDirPath + '/template/episode.html';
+var episodeTemplatePath = rootDirPath + '/template/episode.html';
 
 // rss
 if (buildRSS) {
-  var rss = RSSBuilder.build(volumesDirPath);
+  var rss = RSSBuilder.build(episodesDirPath);
   var outputFilePath = rootDirPath + '/rss.xml';
   fs.writeFileSync(outputFilePath, rss);
   console.log('done: rss');
 }
 
 // index.html
-IndexBuilder.build(indexTemplatePath, volumesDirPath, function(html){
+IndexBuilder.build(indexTemplatePath, episodesDirPath, function(html){
   var outputFilePath = rootDirPath + '/index.html';
   fs.writeFileSync(outputFilePath, html);
 
   console.log('done: index');
 });
 
-// volume/index.html
-VolumeBuilder.build(volumeTemplatePath, volumesDirPath, function(volume, html){
-  var outputDirPath = rootDirPath + '/' + volume.vol;
+// episode/index.html
+EpisodeBuilder.build(episodeTemplatePath, episodesDirPath, function(episode, html){
+  var outputDirPath = rootDirPath + '/' + episode.vol;
   var outputFilePath = outputDirPath + '/index.html';
 
   if (!fs.existsSync(outputDirPath)) {
@@ -260,6 +260,6 @@ VolumeBuilder.build(volumeTemplatePath, volumesDirPath, function(volume, html){
 
   fs.writeFileSync(outputFilePath, html);
 
-  console.log('done: ' + volume.vol);
+  console.log('done: ' + episode.vol);
 });
 
