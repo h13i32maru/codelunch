@@ -1,8 +1,23 @@
-body{
+html,body{
   padding: 0;
   margin: 0;
   background-color: #f9f9f9;
+  height: 100%;
+  width: 100%;
 }
+
+/*フッター固定表示のために設定*/
+div#cl-whole-contents{
+    position: relative;
+    min-height: 100%;
+}
+
+.cl-whole-footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0px;
+}
+/*ここまで*/
 
 p{
   margin: 0;
@@ -94,6 +109,14 @@ a {
   background: #000 url("../image/key-visual.png") no-repeat;
 }
 
+/* add title design */
+.cl-doc-header img{
+    height: 48px;
+    width: 400px;
+    background: url("../image/sight-title.png") no-repeat;
+    margin: 64px auto;
+}
+
 @media (max-width: 640px) {
   .cl-doc-header {
     zoom: 0.5;
@@ -106,7 +129,8 @@ a {
   margin: 16px auto 48px;
   padding-bottom: 48px;
   color: #2d2d2d;
-  border: 1px solid #ccc;
+  /*height: 536px;*/
+  border: 1px solid #cccccc;
 }
 
 .cl-doc-body section{
@@ -210,6 +234,11 @@ a {
 
 .cl-doc-vol-body .cl-related-words a:hover{
   color: #cccccc;
+}
+/*フッターにかからないように設定*/
+.cl-doc-body-outer{
+    padding-bottom: 200px;
+
 }
 
 /* for footer */
