@@ -7,15 +7,15 @@ html,body{
 }
 
 /*フッター固定表示のために設定*/
-div#cl-whole-contents{
-    position: relative;
-    min-height: 100%;
+.cl-whole-contents{
+  position: relative;
+  min-height: 100%;
 }
 
 .cl-whole-footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 /*ここまで*/
 
@@ -77,6 +77,18 @@ a {
   height: 32px;
 }
 
+.cl-icon-key-visual {
+  background: #000 url("../image/key-visual.png") no-repeat;
+  width: 1240px;
+  height: 176px;
+}
+
+.cl-icon-title {
+  background-image: url("../image/footer-logo.png");
+  width: 168px;
+  height: 32px;
+}
+
 .cl-icon-logo {
   background-image: url("../image/footer-logo.png");
   width: 168px;
@@ -106,15 +118,16 @@ a {
 /* for header */
 .cl-doc-header {
   height: 176px;
-  background: #000 url("../image/key-visual.png") no-repeat;
+  background-color: #000000;
 }
 
-/* add title design */
-.cl-doc-header img{
-    height: 48px;
-    width: 400px;
-    background: url("../image/sight-title.png") no-repeat;
-    margin: 64px auto;
+.cl-doc-header .cl-icon-key-visual {
+  width: 100%;
+  line-height: 176px;
+}
+
+.cl-doc-header .cl-icon-title {
+  vertical-align: middle;
 }
 
 @media (max-width: 640px) {
