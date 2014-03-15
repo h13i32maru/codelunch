@@ -5,9 +5,18 @@
     <description><![CDATA[Code Lunch Podcast]]></description>
     <link>http://codelunch.fm</link>
     <generator>RSS for Node</generator>
-    <lastBuildDate>Fri, 28 Feb 2014 07:37:50 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 15 Mar 2014 12:18:41 GMT</lastBuildDate>
     <atom:link href="http://codelunch.fm/rss.xml" rel="self" type="application/rss+xml"/>
     <author><![CDATA[h13i32maru]]></author>
+    <item>
+      <title><![CDATA[PNaClとasm.js]]></title>
+      <description><![CDATA[今回は@muo_jpさんに来て頂いて、Webの未来をカエルかも知れないPNaClとasm.jsについてお話していただきました。]]></description>
+      <link>http://codelunch.fm/4</link>
+      <guid isPermaLink="false">http://codelunch.fm/4</guid>
+      <dc:creator><![CDATA[h13i32maru]]></dc:creator>
+      <pubDate>Fri, 14 Mar 2014 15:00:00 GMT</pubDate>
+      <enclosure url="http://codelunch.fm/download/episode4.mp3" length="0" type="audio/mpeg"/>
+    </item>
     <item>
       <title><![CDATA[NaN-BoxingによるJavaScriptの最適化]]></title>
       <description><![CDATA[今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。]]></description>
