@@ -1,8 +1,23 @@
-body{
+html,body{
   padding: 0;
   margin: 0;
   background-color: #f9f9f9;
+  height: 100%;
+  width: 100%;
 }
+
+/*フッター固定表示のために設定*/
+.cl-whole-contents{
+  position: relative;
+  min-height: 100%;
+}
+
+.cl-whole-footer{
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+/*ここまで*/
 
 p{
   margin: 0;
@@ -62,6 +77,18 @@ a {
   height: 32px;
 }
 
+.cl-icon-key-visual {
+  background: #000 url("../image/key-visual.png") no-repeat;
+  width: 1240px;
+  height: 176px;
+}
+
+.cl-icon-title {
+  background-image: url("../image/footer-logo.png");
+  width: 168px;
+  height: 32px;
+}
+
 .cl-icon-logo {
   background-image: url("../image/footer-logo.png");
   width: 168px;
@@ -91,7 +118,16 @@ a {
 /* for header */
 .cl-doc-header {
   height: 176px;
-  background: #000 url("../image/key-visual.png") no-repeat;
+  background-color: #000000;
+}
+
+.cl-doc-header .cl-icon-key-visual {
+  width: 100%;
+  line-height: 176px;
+}
+
+.cl-doc-header .cl-icon-title {
+  vertical-align: middle;
 }
 
 @media (max-width: 640px) {
@@ -106,7 +142,8 @@ a {
   margin: 16px auto 48px;
   padding-bottom: 48px;
   color: #2d2d2d;
-  border: 1px solid #ccc;
+  /*height: 536px;*/
+  border: 1px solid #cccccc;
 }
 
 .cl-doc-body section{
@@ -210,6 +247,11 @@ a {
 
 .cl-doc-vol-body .cl-related-words a:hover{
   color: #cccccc;
+}
+/*フッターにかからないように設定*/
+.cl-doc-body-outer{
+    padding-bottom: 200px;
+
 }
 
 /* for footer */
