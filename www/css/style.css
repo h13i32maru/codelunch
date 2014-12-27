@@ -211,6 +211,11 @@ a {
   margin: 16px 0 0 -8px;
 }
 
+.cl-doc-vol-body .cl-related-words {
+  margin-top: 0;
+  padding-left: 1em;
+}
+
 .cl-doc-vol-body .cl-related-words a{
   display: block;
   transition: 0.5s;
