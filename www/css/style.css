@@ -203,6 +203,10 @@ a {
   text-align: right;
 }
 
+.cl-doc-vol-body .cl-audio .cl-download .cl-time {
+  padding-right: 10px;
+}
+
 .cl-doc-vol-body .cl-icon-related-words {
   margin: 16px 0 0 -8px;
 }

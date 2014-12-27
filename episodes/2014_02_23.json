@@ -1,6 +1,7 @@
 {
   "ep": 3,
   "date": "2014/02/23",
+  "time": "34:08",
   "title": "NaN-BoxingによるJavaScriptの最適化",
   "text": "今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。",
   "words": [

@@ -1,6 +1,7 @@
 {
   "ep": 5,
   "date": "2014/12/27",
+  "time": "36:51",
   "title": "Lua Debugger and Clojure on Android",
   "text": "今回は@tenntennさんに来て頂いて、LuaのデバッガやClojureを使ったAndroidアプリの開発について話をしました。",
   "words": [

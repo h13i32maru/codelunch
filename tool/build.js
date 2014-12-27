@@ -134,6 +134,9 @@ var EpisodeBuilder = {
     var download = window.document.querySelector('#cl-audio .cl-download a');
     download.href = 'episode' + episode.ep + '.mp3';
 
+    var time = window.document.querySelector('#cl-audio .cl-time');
+    time.textContent = episode.time;
+
     var date = window.document.querySelector('#cl-date');
     date.textContent = episode.date;
 
