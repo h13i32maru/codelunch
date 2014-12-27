@@ -1,0 +1,12 @@
+{
+  "ep": 5,
+  "date": "2014/12/27",
+  "title": "Lua Debugger and Clojure on Android",
+  "text": "今回は@tenntennさんに来て頂いて、LuaのデバッガやClojureを使ったAndroidアプリの開発について話をしました。",
+  "words": [
+    {"word": "丸山食堂", "url": "http://blog.h13i32maru.jp/entry/2014/12/22/213239"},
+    {"word": "LUPE", "url": "https://github.com/tenntenn/lupe"},
+    {"word": "Clojure on Android", "url": "https://github.com/clojure-android/lein-droid"},
+    {"word": "LINEスタンプ", "url": "https://github.com/tenntenn/gopher-stickers"}
+  ]
+}

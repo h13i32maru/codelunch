@@ -68,13 +68,13 @@ var IndexBuilder = {
       row.querySelector('#cl-title').textContent = episode.title;
       row.querySelector('#cl-vol-number').textContent = episode.ep;
       row.querySelector('#cl-date').textContent = episode.date;
-      row.querySelector('#cl-text').innerHTML = episode.text;
+      row.querySelector('#cl-text').innerHTML = Util.replaceTwitter(episode.text);
 
       row.innerHTML += '\n';
       docBody.appendChild(row);
     }
 
-    return window.document.innerHTML;
+    return "<!DOCTYPE html>\n" + window.document.documentElement.outerHTML;
   }
 };
 
@@ -127,8 +127,12 @@ var EpisodeBuilder = {
     var vol = window.document.querySelector('#cl-vol-number');
     vol.textContent = episode.ep;
 
-    var iframe = window.document.querySelector('#cl-sound-cloud iframe');
-    iframe.src = iframe.src.replace(/[/]tracks[/][0-9]+/, '/tracks/' + episode.track);
+//    jsdom can not use audio tag.
+//    var audio = window.document.querySelector('#cl-audio audio');
+//    audio.src = 'episode' + episode.ep + '.mp3';
+
+    var download = window.document.querySelector('#cl-audio .cl-download a');
+    download.href = 'episode' + episode.ep + '.mp3';
 
     var date = window.document.querySelector('#cl-date');
     date.textContent = episode.date;
@@ -159,8 +163,10 @@ var EpisodeBuilder = {
       words.appendChild(row);
     }
 
-    var html = window.document.innerHTML;
+    var html = "<!DOCTYPE html>\n" + window.document.documentElement.outerHTML;
     window.close();
+
+    html = html.replace('episode999.mp3', 'episode' + episode.ep + '.mp3');
 
     return html;
   }
@@ -184,7 +190,7 @@ var RSSBuilder = {
     for (var i = 0; i < episodes.length; i++) {
       var episode = episodes[i];
       var url = this.SITE_URL + '/' + episode.ep;
-      var download = this.SITE_URL + '/download/episode' + episode.ep + '.mp3';
+      var download = this.SITE_URL + '/' + episode.ep + '/episode' + episode.ep + '.mp3';
       feed.item({
         title: episode.title,
         description: episode.text,
@@ -236,14 +242,14 @@ var episodeTemplatePath = rootDirPath + '/template/episode.html';
 // rss
 if (buildRSS) {
   var rss = RSSBuilder.build(episodesDirPath);
-  var outputFilePath = rootDirPath + '/rss.xml';
+  var outputFilePath = rootDirPath + '/www/rss.xml';
   fs.writeFileSync(outputFilePath, rss);
   console.log('done: rss');
 }
 
 // index.html
 IndexBuilder.build(indexTemplatePath, episodesDirPath, function(html){
-  var outputFilePath = rootDirPath + '/index.html';
+  var outputFilePath = rootDirPath + '/www/index.html';
   fs.writeFileSync(outputFilePath, html);
 
   console.log('done: index');
@@ -251,7 +257,7 @@ IndexBuilder.build(indexTemplatePath, episodesDirPath, function(html){
 
 // episode/index.html
 EpisodeBuilder.build(episodeTemplatePath, episodesDirPath, function(episode, html){
-  var outputDirPath = rootDirPath + '/' + episode.ep;
+  var outputDirPath = rootDirPath + '/www/' + episode.ep;
   var outputFilePath = outputDirPath + '/index.html';
 
   if (!fs.existsSync(outputDirPath)) {

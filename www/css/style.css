@@ -1,0 +1,254 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+}
+
+p{
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* for grid system */
+.cl-container {
+  max-width: 712px;
+  margin: auto;
+}
+
+.cl-row {
+  width: 100%;
+}
+
+.cl-row > [class^=cl-col] {
+  display: inline-block;
+}
+
+/* for icon */
+[class^=cl-icon] {
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+.cl-icon-twitter {
+  background-image: url("../image/icon-bird.png");
+  width: 20px;
+  height: 16px;
+}
+
+.cl-icon-rss {
+  background-image: url("../image/icon-rss.png");
+  width: 16px;
+  height: 16px;
+}
+
+.cl-icon-number-bg {
+  background-image: url("../image/number-bg.png");
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  line-height: 56px;
+}
+.cl-icon-number-bg > span{
+  position: relative;
+  top: 5px;
+}
+
+.cl-icon-arrow {
+  background-image: url("../image/arrow.png");
+  width: 32px;
+  height: 32px;
+}
+
+.cl-icon-logo {
+  background-image: url("../image/footer-logo.png");
+  width: 168px;
+  height: 32px;
+}
+
+.cl-icon-related-words {
+  background-image: url("../image/title-related.png");
+  width: 152px;
+  height: 24px;
+}
+
+/* for navigation bar */
+.cl-navbar {
+  height:32px;
+  line-height: 32px;
+  text-align: right;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+}
+
+.cl-navbar .cl-col {
+  margin: 0 10px;
+}
+
+/* for header */
+.cl-doc-header {
+  height: 176px;
+  background: #000 url("../image/key-visual.png") no-repeat;
+}
+
+@media (max-width: 640px) {
+  .cl-doc-header {
+    zoom: 0.5;
+  }
+}
+
+/* for doc body */
+.cl-doc-body {
+  background-color: #fff;
+  margin: 16px auto 48px;
+  padding-bottom: 48px;
+  color: #2d2d2d;
+  border: 1px solid #ccc;
+}
+
+.cl-doc-body section{
+  position: relative;
+  margin: 0 20px;
+  padding-left: 12px;
+  padding-top: 8px;
+  min-height: 150px;
+  border-bottom: 1px solid #cfcfcf;
+}
+
+.cl-doc-body section:last-child {
+  border-style: none;
+}
+
+.cl-doc-body section > a {
+  display: block;
+  width: 100%;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -ms-transtion: 0.5s;
+}
+
+.cl-doc-body section > a:hover{
+  background-color: white;
+  cursor: pointer;
+  filter: alpha(opacity=60);
+  -ms-filter: "alpha(opacity=60)";
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+
+.cl-doc-body section .cl-date {
+  margin: 14px 0 0 8px;
+}
+
+@media (max-width: 640px) {
+  .cl-doc-body section .cl-title-outer {
+    /**
+     * モバイルでは横幅が小さいのでタイトルが入りきらず横にすごく伸びてしまう.
+     * そうすると、レイアウトが崩れてしまうので、80%を最大としておく
+     */
+    max-width: 70%;
+  }
+
+  .cl-doc-body section {
+    padding-bottom: 20px;
+  }
+}
+
+.cl-doc-body section .cl-title {
+  margin: -6px 0 0 4px;
+  font-size: 20px;
+}
+
+.cl-doc-body section .cl-text {
+  padding: 4px 40px 0 12px;
+}
+
+.cl-doc-body section .cl-icon-number-bg {
+  position: relative;
+  top: -12px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.cl-doc-body section .cl-icon-arrow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -16px;
+}
+
+/* for doc vol body */
+.cl-doc-vol-body {
+  height: auto;
+}
+
+.cl-doc-vol-body > section{
+  height: auto;
+}
+
+.cl-doc-vol-body .cl-audio {
+  margin-top: 20px;
+}
+
+.cl-doc-vol-body .cl-audio audio {
+  width: 100%;
+}
+
+.cl-doc-vol-body .cl-audio .cl-download {
+  text-align: right;
+}
+
+.cl-doc-vol-body .cl-icon-related-words {
+  margin: 16px 0 0 -8px;
+}
+
+.cl-doc-vol-body .cl-related-words a{
+  display: block;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -ms-transtion: 0.5s;
+}
+
+.cl-doc-vol-body .cl-related-words a:hover{
+  color: #cccccc;
+}
+
+/* for footer */
+footer.cl-doc-footer {
+  background-color: #333333;
+  color: #fff;
+  height: 88px;
+  padding-top: 24px;
+  font-size: 12px;
+}
+
+footer.cl-doc-footer .cl-icon-logo {
+  float: right;
+}
+
+@media (max-width: 640px) {
+  /* スマホの場合、フッターのアイコンを横並びは厳しいので縦にする */
+  footer.cl-doc-footer .cl-row [class^=cl-col] {
+    display: block;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+}
+
+/* for copyright */
+footer.cl-copyright-footer {
+  height: 34px;
+  background-color: #2c2c2c;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 14px;
+}
+
