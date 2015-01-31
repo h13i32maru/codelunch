@@ -40,9 +40,10 @@ a {
 }
 
 .cl-icon-rss {
-  background-image: url("../image/icon-rss.png");
-  width: 16px;
-  height: 16px;
+  background-image: url("../image/feed.png");
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
 }
 
 .cl-icon-number-bg {
@@ -74,6 +75,11 @@ a {
   background-image: url("../image/title-related.png");
   width: 152px;
   height: 24px;
+}
+
+.cl-twitter {
+  font-weight: bold;
+  color: #444;
 }
 
 /* for navigation bar */
@@ -110,15 +116,34 @@ a {
 
 @media (max-width: 640px) {
   .cl-doc-header {
-    zoom: 0.5;
+    margin-bottom: 10px;
+  }
+  .cl-doc-title {
+    font-size: 24px;
   }
 }
+
+.cl-doc-title .cl-icon-rss {
+  margin-left: 10px;
+}
+
+.cl-doc-author {
+  text-align: center;
+  font-size: 16px;
+}
+
+
+/*@media (max-width: 640px) {*/
+  /*.cl-doc-header {*/
+    /*zoom: 0.5;*/
+  /*}*/
+/*}*/
 
 /* for doc body */
 .cl-doc-body {
   /*background-color: #fff;*/
-  padding: 10px;
-  margin: 16px auto 48px;
+  padding: 10px 0;
+  margin: 16px auto 0;
   padding-bottom: 48px;
   color: #2d2d2d;
 }
@@ -135,7 +160,6 @@ a {
 .cl-doc-body section > a {
   display: block;
   width: 100%;
-  padding: 10px;
   box-sizing: border-box;
   transition: 0.5s;
   -webkit-transition: 0.5s;
@@ -145,7 +169,6 @@ a {
 }
 
 .cl-doc-body section > a:hover{
-  background-color: white;
   cursor: pointer;
   filter: alpha(opacity=60);
   -ms-filter: "alpha(opacity=60)";
@@ -161,19 +184,19 @@ a {
   font-size: 12px;
 }
 
-@media (max-width: 640px) {
-  .cl-doc-body section .cl-title-outer {
-    /**
-     * モバイルでは横幅が小さいのでタイトルが入りきらず横にすごく伸びてしまう.
-     * そうすると、レイアウトが崩れてしまうので、80%を最大としておく
-     */
-    max-width: 70%;
-  }
+/*@media (max-width: 640px) {*/
+  /*.cl-doc-body section .cl-title-outer {*/
+    /***/
+     /** モバイルでは横幅が小さいのでタイトルが入りきらず横にすごく伸びてしまう.*/
+     /** そうすると、レイアウトが崩れてしまうので、80%を最大としておく*/
+     /**/
+    /*max-width: 70%;*/
+  /*}*/
 
-  .cl-doc-body section {
-    padding-bottom: 20px;
-  }
-}
+  /*.cl-doc-body section {*/
+    /*padding-bottom: 20px;*/
+  /*}*/
+/*}*/
 
 .cl-vol-label {
   font-weight: bold;
@@ -193,6 +216,7 @@ a {
 }
 
 .cl-doc-body section .cl-text {
+  padding: 10px 0;
   font-size: 14px;
 }
 
@@ -233,16 +257,16 @@ a {
   padding-right: 10px;
 }
 
-.cl-doc-vol-body .cl-icon-related-words {
-  margin: 16px 0 0 -8px;
+.cl-doc-vol-body .cl-show-notes-label  {
+  font-weight: bold;
 }
 
-.cl-doc-vol-body .cl-related-words {
+.cl-doc-vol-body .cl-show-notes {
   margin-top: 0;
   padding-left: 1em;
 }
 
-.cl-doc-vol-body .cl-related-words a{
+.cl-doc-vol-body .cl-show-notes a{
   display: block;
   transition: 0.5s;
   -webkit-transition: 0.5s;
@@ -251,39 +275,39 @@ a {
   -ms-transtion: 0.5s;
 }
 
-.cl-doc-vol-body .cl-related-words a:hover{
+.cl-doc-vol-body .cl-show-notes a:hover{
   color: #cccccc;
 }
 
 /* for footer */
-footer.cl-doc-footer {
-  background-color: #333333;
-  color: #fff;
-  height: 88px;
-  padding-top: 24px;
-  font-size: 12px;
-}
+/*footer.cl-doc-footer {*/
+  /*background-color: #333333;*/
+  /*color: #fff;*/
+  /*height: 88px;*/
+  /*padding-top: 24px;*/
+  /*font-size: 12px;*/
+/*}*/
 
-footer.cl-doc-footer .cl-icon-logo {
-  float: right;
-}
+/*footer.cl-doc-footer .cl-icon-logo {*/
+  /*float: right;*/
+/*}*/
 
-@media (max-width: 640px) {
+/*@media (max-width: 640px) {*/
   /* スマホの場合、フッターのアイコンを横並びは厳しいので縦にする */
-  footer.cl-doc-footer .cl-row [class^=cl-col] {
-    display: block;
-    padding-left: 10px;
-    padding-bottom: 10px;
-  }
-}
+  /*footer.cl-doc-footer .cl-row [class^=cl-col] {*/
+    /*display: block;*/
+    /*padding-left: 10px;*/
+    /*padding-bottom: 10px;*/
+  /*}*/
+/*}*/
 
 /* for copyright */
 footer.cl-copyright-footer {
-  height: 34px;
-  background-color: #2c2c2c;
-  color: #fff;
+  /*height: 34px;*/
+  /*background-color: #2c2c2c;*/
+  /*color: #fff;*/
   text-align: center;
   font-size: 12px;
-  padding-top: 14px;
+  padding-bottom: 14px;
 }
 

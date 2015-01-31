@@ -28,7 +28,7 @@ var Util = {
   },
 
   replaceTwitter: function(text) {
-    return text.replace(/@([0-9a-zA-Z_]+)/g, '<a href="https://twitter.com/$1" target="_blank">@$1</a>');
+    return text.replace(/@([0-9a-zA-Z_]+)/g, '<a class="cl-twitter" href="https://twitter.com/$1" target="_blank">@$1</a>');
   }
 };
 
@@ -150,7 +150,7 @@ var EpisodeBuilder = {
     var notice = window.document.querySelector('#cl-notice');
     notice.innerHTML = episode.notice || "";
 
-    var words = window.document.querySelector('#cl-related-words');
+    var words = window.document.querySelector('#cl-show-notes');
     var rowTemplate = words.children[0].cloneNode(true);
     words.innerHTML = '';
 
