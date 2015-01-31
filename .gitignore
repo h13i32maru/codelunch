@@ -1,4 +1,6 @@
 .idea
 node_modules
 /download/
-*.mp3
+/www/[0-9]*
+/www/index.html
+/www/rss.xml
