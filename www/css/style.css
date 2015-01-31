@@ -168,6 +168,11 @@ a {
   padding: 4px 40px 0 12px;
 }
 
+.cl-doc-body section .cl-notice {
+  font-size: 12px;
+  padding: 10px 0 0 10px;
+}
+
 .cl-doc-body section .cl-icon-number-bg {
   position: relative;
   top: -12px;

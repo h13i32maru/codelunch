@@ -5,9 +5,18 @@
     <description><![CDATA[Code Lunch Podcast]]></description>
     <link>http://codelunch.fm</link>
     <generator>RSS for Node</generator>
-    <lastBuildDate>Sat, 27 Dec 2014 12:39:52 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jan 2015 17:02:04 GMT</lastBuildDate>
     <atom:link href="http://codelunch.fm/rss.xml" rel="self" type="application/rss+xml"/>
     <author><![CDATA[h13i32maru]]></author>
+    <item>
+      <title><![CDATA[ECMAScript6 & Project Euler]]></title>
+      <description><![CDATA[今回は@h13i32maruと@iizukakの二人で、ECMAScript6とProject Eulerについて話をしました。]]></description>
+      <link>http://codelunch.fm/6</link>
+      <guid isPermaLink="false">http://codelunch.fm/6</guid>
+      <dc:creator><![CDATA[h13i32maru]]></dc:creator>
+      <pubDate>Thu, 29 Jan 2015 15:00:00 GMT</pubDate>
+      <enclosure url="http://codelunch.fm/6/episode6.mp3" length="0" type="audio/mpeg"/>
+    </item>
     <item>
       <title><![CDATA[Lua Debugger and Clojure on Android]]></title>
       <description><![CDATA[今回は@tenntennさんに来て頂いて、LuaのデバッガやClojureを使ったAndroidアプリの開発について話をしました。]]></description>

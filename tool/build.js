@@ -147,6 +147,9 @@ var EpisodeBuilder = {
     // @hogeな文字列をtwitterへのリンクに置換する.
     text.innerHTML = Util.replaceTwitter(episode.text);
 
+    var notice = window.document.querySelector('#cl-notice');
+    notice.innerHTML = episode.notice || "";
+
     var words = window.document.querySelector('#cl-related-words');
     var rowTemplate = words.children[0].cloneNode(true);
     words.innerHTML = '';
