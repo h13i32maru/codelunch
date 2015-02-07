@@ -5,6 +5,7 @@
   "version" : "0.0.1",
   "devDependencies" : {
     "jsdom": "",
-    "rss": ""
+    "rss": "",
+    "http-server": ""
   }
 }

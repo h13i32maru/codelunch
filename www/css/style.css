@@ -82,6 +82,11 @@ a {
   color: #444;
 }
 
+.cl-twitter img {
+  width: 24px;
+  height: 24px;
+}
+
 /* for navigation bar */
 .cl-navbar {
   height:32px;
@@ -97,17 +102,25 @@ a {
 }
 
 /* for header */
+.cl-doc-header-link {
+  display: block;
+  width: 256px;
+  height: 256px;
+  margin: auto;
+
+}
 .cl-doc-header {
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
   width: 256px;
   height: 256px;
   /*height: 176px;*/
   /*background: #000 url("../image/key-visual.png") no-repeat;*/
-  background: #000 url("../image/artwork.png") no-repeat;
+  background: #000 url("../image/artwork.jpg") no-repeat;
   background-size: 256px;
 }
 
 .cl-doc-title {
+  padding-top: 10px;
   text-align: center;
   font-size: 34px;
   font-weight: bold;
@@ -115,9 +128,6 @@ a {
 }
 
 @media (max-width: 640px) {
-  .cl-doc-header {
-    margin-bottom: 10px;
-  }
   .cl-doc-title {
     font-size: 24px;
   }
@@ -129,7 +139,8 @@ a {
 
 .cl-doc-author {
   text-align: center;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 
