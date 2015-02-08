@@ -1,0 +1,14 @@
+{
+  "ep": 7,
+  "date": "2015/02/07",
+  "time": "48:54",
+  "title": "PHP7's Hashtable Implementation",
+  "text": "今回は@hnwさんに来て頂いて、PHP7で内部実装が新しくなったHashtableについて話をしました。",
+  "notice": "",
+  "words": [
+    {"word": "PHP処理系の未来", "url": "http://gihyo.jp/dev/column/newyear/2015/php-future"},
+    {"word": "HHVM", "url": "http://hhvm.com/"},
+    {"word": "PHP's new hashtable implementation", "url": "http://nikic.github.io/2014/12/22/PHPs-new-hashtable-implementation.html"},
+    {"word": "カレー | 無印良品ネットストア", "url": "http://www.muji.net/store/cmdty/section/S3000303"}
+  ]
+}
