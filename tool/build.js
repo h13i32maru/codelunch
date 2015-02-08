@@ -141,6 +141,7 @@ var EpisodeBuilder = {
     date.textContent = episode.date;
 
     var title = window.document.querySelector('#cl-title');
+    window.document.title = window.document.title.replace('{EpisodeTitle}', episode.title);
     title.textContent = episode.title;
 
     var text = window.document.querySelector('#cl-text');
