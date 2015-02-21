@@ -181,16 +181,45 @@ var EpisodeBuilder = {
 
 var RSSBuilder = {
   SITE_URL: 'http://codelunch.fm',
-  FEED_URL: 'http://codelunch.fm/rss.xml',
-  AUTHOR: 'h13i32maru',
 
   build: function(episodesDirPath) {
     var RSS = require('rss');
     var feed = new RSS({
-      title: 'Code Lunch Podcast',
-      feed_url: this.FEED_URL,
+      title: 'CodeLunch.fm',
+      feed_url: 'http://codelunch.fm/rss.xml',
       site_url: this.SITE_URL,
-      author: this.AUTHOR
+      description: 'エンジニアがランチの時に話すような技術ネタを紹介するポッドキャストです。',
+      author: 'Ryo Maruyama',
+      language: 'ja',
+      copyright: '2013 Ryo Maruyama',
+      custom_namespaces: {
+        'itunes': 'http://www.itunes.com/dtds/podcast-1.0.dtd'
+      },
+      custom_elements: [
+        {'itunes:author': 'Ryo Maruyama'},
+        {'itunes:subtitle': 'Podcast by @h13i32maru & @iizukak'},
+        {'itunes:summary': 'エンジニアがランチの時に話すような技術ネタを紹介するポッドキャストです。'},
+        {'itunes:keywords': 'web,programing,javascript,php,go,lua,android'},
+        {'itunes:owner': [
+          {'itunes:name': 'h13i32maru'},
+          {'itunes:email': 'h13i32maru@gmail.com'}
+        ]},
+        {'itunes:image': {
+          _attr: {
+            href: 'http://codelunch.fm/image/artwork_1400.jpg'
+          }
+        }},
+        {'itunes:category': [
+          {_attr: {
+            text: 'Technology'
+          }},
+          {'itunes:category': {
+            _attr: {
+              text: 'Podcasting'
+            }
+          }}
+        ]}
+      ]
     });
 
     var episodes = Util.getEpisodes(episodesDirPath);
@@ -204,7 +233,10 @@ var RSSBuilder = {
         url: url,
         guid: url,
         date: episode.date,
-        enclosure: {url: download}
+        enclosure: {url: download},
+        custom_elements: [
+          {'itunes:duration': episode.time}
+        ]
       });
     }
 

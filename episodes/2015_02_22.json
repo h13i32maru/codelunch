@@ -1,0 +1,15 @@
+{
+  "ep": 8,
+  "date": "2015/02/22",
+  "time": "39:19",
+  "title": "Julia comes here at 2015!",
+  "text": "今回は@iizukakが2015年の気になる技術の話をしました。",
+  "notice": "",
+  "words": [
+    {"word": "Julia", "url": "http://julialang.org/"},
+    {"word": "Firefox OS", "url": "https://www.mozilla.org/ja/firefox/os/"},
+    {"word": "Emscripten", "url": "https://github.com/kripken/emscripten"},
+    {"word": "Nix", "url": "https://nixos.org/nix/"},
+    {"word": "喜嶋先生の静かな世界", "url": "http://www.amazon.co.jp/dp/4062166364"}
+  ]
+}
