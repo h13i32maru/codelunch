@@ -34,13 +34,21 @@ a {
   background-repeat: no-repeat;
 }
 .cl-icon-twitter {
-  background-image: url("../image/icon-bird.png");
-  width: 20px;
-  height: 16px;
+  background-image: url("../image/Twitter.svg");
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
 }
 
 .cl-icon-rss {
-  background-image: url("../image/feed.png");
+  background-image: url("../image/RSS.svg");
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+}
+
+.cl-icon-apple {
+  background-image: url("../image/iTunes.svg");
   width: 24px;
   height: 24px;
   background-size: 24px;

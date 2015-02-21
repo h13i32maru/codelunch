@@ -3,7 +3,7 @@
   "date": "2015/02/22",
   "time": "39:19",
   "title": "Julia comes here at 2015!",
-  "text": "今回は@iizukakが2015年の気になる技術の話をしました。",
+  "text": "今回は@iizukakが2015年の気になる技術(Julia, FirefoxOS, Emscripten, Nix)について話をしました。",
   "notice": "",
   "words": [
     {"word": "Julia", "url": "http://julialang.org/"},
