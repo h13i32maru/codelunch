@@ -228,7 +228,7 @@ var RSSBuilder = {
       var url = this.SITE_URL + '/' + episode.ep;
       var download = this.SITE_URL + '/' + episode.ep + '/episode' + episode.ep + '.mp3';
       feed.item({
-        title: episode.title,
+        title: episode.ep + '. ' + episode.title,
         description: episode.text,
         url: url,
         guid: url,
