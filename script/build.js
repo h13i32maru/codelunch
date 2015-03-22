@@ -43,13 +43,18 @@ function replaceTwitter(text) {
   return text.replace(/@([0-9a-zA-Z_]+)/g, '<a class="cl-twitter" href="https://twitter.com/$1" target="_blank">@$1</a>');
 }
 
-function buildIndex(){
+function buildIndex(forceUpdate){
   var episodes = getEpisodes();
   var latestUnixTime = getLatestUnixTime(episodes);
   var outPath = './www/index.html';
+  var layoutPath = './www/template/layout.html';
   var templatePath = './www/template/index.html';
 
-  if (!isNeedUpdate(outPath, [latestUnixTime, templatePath])) return;
+  if (!forceUpdate) {
+    if (!isNeedUpdate(outPath, [latestUnixTime, templatePath, layoutPath])) {
+      return;
+    }
+  }
 
   var template = fs.readFileSync(templatePath, {encode: 'utf8'}).toString();
   var ice = new IceCap(template);
@@ -62,20 +67,32 @@ function buildIndex(){
     ice.text('date', episode.date);
   });
 
-  fs.writeFileSync(outPath, ice.html, {encode: 'utf8'});
+  var layout = fs.readFileSync(layoutPath, {encode: 'utf8'}).toString();
+  var layoutIce = new IceCap(layout);
+  layoutIce.load('content', ice);
+
+  fs.writeFileSync(outPath, layoutIce.html, {encode: 'utf8'});
   console.log('index.html');
 }
 
-function buildEpisode(){
+function buildEpisode(forceUpdate){
   var episodes = getEpisodes();
+
   var templatePath = './www/template/episode.html';
   var template = fs.readFileSync(templatePath, {encode: 'utf8'}).toString();
+
+  var layoutPath = './www/template/layout.html';
+  var layout = fs.readFileSync(layoutPath, {encode: 'utf8'}).toString();
 
   for (var i = 0; i < episodes.length; i++) {
     var episode = episodes[i];
     var filePath = './www/' + episode.ep + '/index.html';
 
-    if (!isNeedUpdate(filePath, [episode.unixTime, templatePath])) continue;
+    if (!forceUpdate) {
+      if (!isNeedUpdate(filePath, [episode.unixTime, templatePath, layoutPath])) {
+        continue;
+      }
+    }
 
     var ice = new IceCap(template);
     var mp3 = 'episode' + episode.ep + '.mp3';
@@ -91,7 +108,10 @@ function buildEpisode(){
       ice.text('showNoteLink', word.word);
     });
 
-    fs.writeFileSync(filePath, ice.html, {encode: 'utf8'});
+    var layoutIce = new IceCap(layout);
+    layoutIce.load('content', ice);
+
+    fs.writeFileSync(filePath, layoutIce.html, {encode: 'utf8'});
     console.log(episode.ep);
   }
 }
