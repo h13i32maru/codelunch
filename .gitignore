@@ -1,6 +1,4 @@
-.idea
 node_modules
-/download/
 /www/[0-9]*
 /www/index.html
 /www/rss.xml

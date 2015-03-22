@@ -1,0 +1,17 @@
+{
+  "author" : "h13i32maru",
+  "name" : "CodeLunch.fm",
+  "description" : "Build CodeLunch.fm HTML from JSON",
+  "version" : "0.0.1",
+  "scripts": {
+    "build": "node ./script/build.js",
+    "upload": "bash ./script/upload.sh",
+    "start": "bash ./script/server.sh"
+  },
+  "devDependencies" : {
+    "ice-cap": "",
+    "fs-extra": "",
+    "rss": "",
+    "http-server": ""
+  }
+}
