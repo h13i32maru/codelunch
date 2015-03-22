@@ -4,7 +4,7 @@
   "description" : "Build CodeLunch.fm HTML from JSON",
   "version" : "0.0.1",
   "scripts": {
-    "build": "node ./script/build.js",
+    "build": "bash ./script/build.sh",
     "upload": "bash ./script/upload.sh",
     "start": "bash ./script/server.sh"
   },
