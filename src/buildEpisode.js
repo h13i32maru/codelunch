@@ -28,6 +28,7 @@ function buildEpisode(forceUpdate){
     ice.text('title', episode.title);
     ice.load('text', util.replaceTwitter(episode.text));
     ice.text('date', episode.date);
+    ice.text('time', episode.time);
     ice.text('notice', episode.notice);
     ice.attr('audio', 'src', mp3);
     ice.attr('download', 'href', mp3);
