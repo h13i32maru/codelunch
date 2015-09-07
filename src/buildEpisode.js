@@ -39,6 +39,7 @@ function buildEpisode(forceUpdate){
 
     var layoutIce = new IceCap(layout);
     layoutIce.load('content', ice);
+    layoutIce.text('documentTitle', episode.title + ' | CodeLunch.fm', IceCap.MODE_WRITE);
 
     fs.writeFileSync(filePath, layoutIce.html, {encode: 'utf8'});
     console.log(episode.ep);
