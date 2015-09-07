@@ -7,6 +7,8 @@
   "notice": "",
   "words": [
     {"word": "power-assert", "url": "https://github.com/power-assert-js"},
+    {"word": "npm semantic version calculator", "url": "http://semver.npmjs.com/"},
+    {"word": "セマンティック バージョニング 2.0.0", "url": "http://semver.org/lang/ja/"},
     {"word": "Spock", "url": "https://github.com/spockframework/spock"},
     {"word": "ECMAScript Tooling", "url": "https://github.com/estools"},
     {"word": "Node学園祭2012", "url": "http://nodefest.jp/2012/"},
