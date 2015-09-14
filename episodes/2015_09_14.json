@@ -2,7 +2,7 @@
   "ep": "17",
   "date": "2015/09/14",
   "time": "1:18:7",
-  "title": "The power-assert Leaves From Moratorium",
+  "title": "The power-assert Goes To The Next Scene",
   "text": "@t_wadaさんとpower-assert1.0.0リリースを記念して、内部的な実装や今後の方向などを話しました(後編)",
   "notice": "",
   "words": [
@@ -20,10 +20,14 @@
     {"word": "power-assertの記事が出来るまで", "url": "http://azu.github.io/slide/hasakurajs/power-assert.html#1"},
     {"word": "Support other assertion styles?", "url": "https://github.com/power-assert-js/power-assert/issues/22"},
     {"word": "Mechanism and philosophy of power-assert (Slides)", "url": "http://www.echojs.com/news/12344"},
+    {"word": "power-assert-js organization", "url": "https://github.com/power-assert-js"},
     {"word": "espower-typescript", "url": "https://github.com/power-assert-js/espower-typescript"},
+    {"word": "babel-plugin-espower", "url": "https://github.com/power-assert-js/babel-plugin-espower"},
     {"word": "power-assert-js 公式ロゴが生まれるまでの流れ", "url": "http://togetter.com/li/823597"},
     {"word": "power-assert-js-logo", "url": "https://github.com/power-assert-js/power-assert-js-logo"},
     {"word": "Design By Contract", "url": "https://ja.wikipedia.org/wiki/%E5%A5%91%E7%B4%84%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%9F%E3%83%B3%E3%82%B0"},
-    {"word": "unassert", "url": "https://github.com/twada/unassert"}
+    {"word": "unassert", "url": "https://github.com/twada/unassert"},
+    {"word": "babel-plugin-unassert", "url": "https://github.com/twada/babel-plugin-unassert"},
+    {"word": "オブジェクト指向入門 第2版 原則・コンセプト", "url": "http://www.amazon.co.jp/dp/4798111112"}
   ]
 }
