@@ -1,9 +1,9 @@
 {
   "ep": "18",
   "date": "2015/12/21",
-  "time": "::",
+  "time": "42:20",
   "title": "Walk The Node.js History",
-  "text": "@yosuke_furukawaさんとNode.jsの過去・現在・未来の話をしました（前編）",
+  "text": "@yosuke_furukawaさんとNode.jsの過去・現在の話をしました（前編）",
   "notice": "",
   "words": [
     {"word": "The C10K problem", "url": "http://www.kegel.com/c10k.html"},
