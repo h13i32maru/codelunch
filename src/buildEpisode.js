@@ -4,17 +4,17 @@ const fs = require('fs-extra');
 const util = require('./util.js');
 
 function buildEpisode(forceUpdate){
-  var episodes = util.getEpisodes();
+  const episodes = util.getEpisodes();
 
-  var templatePath = './www/template/episode.html';
-  var template = fs.readFileSync(templatePath, {encode: 'utf8'}).toString();
+  const templatePath = './src/template/episode.html';
+  const template = fs.readFileSync(templatePath, {encode: 'utf8'}).toString();
 
-  var layoutPath = './www/template/layout.html';
-  var layout = fs.readFileSync(layoutPath, {encode: 'utf8'}).toString();
+  const layoutPath = './src/template/layout.html';
+  const layout = fs.readFileSync(layoutPath, {encode: 'utf8'}).toString();
 
-  for (var i = 0; i < episodes.length; i++) {
-    var episode = episodes[i];
-    var filePath = './www/' + episode.ep + '/index.html';
+  for (let i = 0; i < episodes.length; i++) {
+    const episode = episodes[i];
+    const filePath = './www/' + episode.ep + '/index.html';
 
     if (!forceUpdate) {
       if (!util.isNeedUpdate(filePath, [episode.unixTime, templatePath, layoutPath])) {
@@ -22,8 +22,8 @@ function buildEpisode(forceUpdate){
       }
     }
 
-    var ice = new IceCap(template);
-    var mp3 = 'episode' + episode.ep + '.mp3';
+    const ice = new IceCap(template);
+    const mp3 = 'episode' + episode.ep + '.mp3';
     ice.text('number', episode.ep);
     ice.text('title', episode.title);
     ice.load('text', util.replaceTwitter(episode.text));
@@ -37,7 +37,7 @@ function buildEpisode(forceUpdate){
       ice.text('showNoteLink', word.word);
     });
 
-    var layoutIce = new IceCap(layout);
+    const layoutIce = new IceCap(layout);
     layoutIce.load('content', ice);
     layoutIce.text('documentTitle', episode.title + ' | CodeLunch.fm', IceCap.MODE_WRITE);
 

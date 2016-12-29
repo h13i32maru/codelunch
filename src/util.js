@@ -1,18 +1,18 @@
 'use strict';
-var fs = require('fs-extra');
-var path = require('path');
+const fs = require('fs-extra');
+const path = require('path');
 
 function getEpisodes() {
   if (getEpisodes.cache) return getEpisodes.cache;
 
-  var episodesDirPath = './episodes';
-  var episodeFilePaths = fs.readdirSync(episodesDirPath).reverse();
-  var episodes = [];
-  for (var i = 0; i < episodeFilePaths.length; i++) {
-    var filePath = episodesDirPath + path.sep + episodeFilePaths[i];
-    var episodeJSON = fs.readFileSync(filePath, {encode: 'utf8'});
-    var episode = JSON.parse(episodeJSON);
-    var stat = fs.statSync(filePath);
+  const episodesDirPath = './episodes';
+  const episodeFilePaths = fs.readdirSync(episodesDirPath).reverse();
+  const episodes = [];
+  for (let i = 0; i < episodeFilePaths.length; i++) {
+    const filePath = episodesDirPath + path.sep + episodeFilePaths[i];
+    const episodeJSON = fs.readFileSync(filePath, {encode: 'utf8'});
+    const episode = JSON.parse(episodeJSON);
+    const stat = fs.statSync(filePath);
     episode.unixTime = stat.mtime.getTime();
     episodes.push(episode);
   }
@@ -23,9 +23,9 @@ function getEpisodes() {
 }
 
 function getLatestUnixTime(episodes) {
-  var latestUnixTime = -1;
-  for (var i = 0; i < episodes.length; i++) {
-    var episode = episodes[i];
+  let latestUnixTime = -1;
+  for (let i = 0; i < episodes.length; i++) {
+    const episode = episodes[i];
     latestUnixTime = Math.max(latestUnixTime, episode.unixTime);
   }
 
@@ -37,22 +37,26 @@ function replaceTwitter(text) {
 }
 
 function isNeedUpdate(outFilePath, materials) {
+  let outFileStat;
+  let outFileUnixTime;
   try {
-    var outFileStat = fs.statSync(outFilePath);
-    var outFileUnixTime = outFileStat.mtime.getTime();
+    outFileStat = fs.statSync(outFilePath);
+    outFileUnixTime = outFileStat.mtime.getTime();
   } catch (e) {
     return true;
   }
 
-  for (var i = 0; i < materials.length; i++) {
-    var material = materials[i];
+  for (let i = 0; i < materials.length; i++) {
+    const material = materials[i];
+    let materialStat;
+    let materialUnixTime;
     switch (typeof material) {
       case 'string':
-        var materialStat = fs.statSync(material);
-        var materialUnixTime = materialStat.mtime.getTime();
+        materialStat = fs.statSync(material);
+        materialUnixTime = materialStat.mtime.getTime();
         break;
       case 'number':
-        var materialUnixTime = material;
+        materialUnixTime = material;
         break;
       default:
         throw new Error('unknown material type. type = ' + typeof material);

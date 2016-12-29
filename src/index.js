@@ -1,6 +1,6 @@
-var buildIndex = require('./buildIndex.js');
-var buildEpisode = require('./buildEpisode.js');
-var buildRSS = require('./buildRss.js');
+const buildIndex = require('./buildIndex.js');
+const buildEpisode = require('./buildEpisode.js');
+const buildRSS = require('./buildRss.js');
 
 buildIndex();
 buildEpisode();

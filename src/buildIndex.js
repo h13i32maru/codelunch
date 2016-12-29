@@ -4,11 +4,11 @@ const fs = require('fs-extra');
 const util = require('./util.js');
 
 function buildIndex(forceUpdate){
-  var episodes = util.getEpisodes();
-  var latestUnixTime = util.getLatestUnixTime(episodes);
-  var outPath = './www/index.html';
-  var layoutPath = './www/template/layout.html';
-  var templatePath = './www/template/index.html';
+  const episodes = util.getEpisodes();
+  const latestUnixTime = util.getLatestUnixTime(episodes);
+  const outPath = './www/index.html';
+  const layoutPath = './src/template/layout.html';
+  const templatePath = './src/template/index.html';
 
   if (!forceUpdate) {
     if (!util.isNeedUpdate(outPath, [latestUnixTime, templatePath, layoutPath])) {
@@ -16,8 +16,8 @@ function buildIndex(forceUpdate){
     }
   }
 
-  var template = fs.readFileSync(templatePath, {encode: 'utf8'}).toString();
-  var ice = new IceCap(template);
+  const template = fs.readFileSync(templatePath, {encode: 'utf8'}).toString();
+  const ice = new IceCap(template);
 
   ice.loop('episode', episodes, function(i, episode, ice){
     ice.attr('link', 'href', episode.ep);
@@ -27,8 +27,8 @@ function buildIndex(forceUpdate){
     ice.text('date', episode.date);
   });
 
-  var layout = fs.readFileSync(layoutPath, {encode: 'utf8'}).toString();
-  var layoutIce = new IceCap(layout);
+  const layout = fs.readFileSync(layoutPath, {encode: 'utf8'}).toString();
+  const layoutIce = new IceCap(layout);
   layoutIce.load('content', ice);
 
   fs.writeFileSync(outPath, layoutIce.html, {encode: 'utf8'});

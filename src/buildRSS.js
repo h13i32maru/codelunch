@@ -1,12 +1,12 @@
-var RSS = require('rss');
-var fs = require('fs-extra');
-var util = require('./util.js');
+const RSS = require('rss');
+const fs = require('fs-extra');
+const util = require('./util.js');
 
 function buildRSS(forceUpdate) {
-  var episodes = util.getEpisodes();
-  var latestUnixTime = util.getLatestUnixTime(episodes);
-  var outPath = './www/rss.xml';
-  var templatePath = './www/template/rss.json';
+  const episodes = util.getEpisodes();
+  const latestUnixTime = util.getLatestUnixTime(episodes);
+  const outPath = './www/rss.xml';
+  const templatePath = './src/template/rss.json';
 
   if (!forceUpdate) {
     if (!util.isNeedUpdate(outPath, [templatePath, latestUnixTime])) {
@@ -14,14 +14,14 @@ function buildRSS(forceUpdate) {
     }
   }
 
-  var rssJSON = fs.readFileSync('./www/template/rss.json', {encode: 'utf8'});
-  var rss = JSON.parse(rssJSON);
-  var feed = new RSS(rss);
+  const rssJSON = fs.readFileSync('./src/template/rss.json', {encode: 'utf8'});
+  const rss = JSON.parse(rssJSON);
+  const feed = new RSS(rss);
 
-  for (var i = 0; i < episodes.length; i++) {
-    var episode = episodes[i];
-    var url = rss.site_url + '/' + episode.ep;
-    var download = rss.site_url + '/' + episode.ep + '/episode' + episode.ep + '.mp3';
+  for (let i = 0; i < episodes.length; i++) {
+    const episode = episodes[i];
+    const url = rss.site_url + '/' + episode.ep;
+    const download = rss.site_url + '/' + episode.ep + '/episode' + episode.ep + '.mp3';
     feed.item({
       title: episode.ep + '. ' + episode.title,
       description: episode.text,
