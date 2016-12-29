@@ -5,6 +5,7 @@
   "title": "PHP7's Hashtable Implementation",
   "text": "今回は@hnwさんに来て頂いて、PHP7で内部実装が新しくなったHashtableについて話をしました。",
   "audio": "http://bit.ly/2ijKmRm",
+  "size": 23926427,
   "notice": "",
   "words": [
     {"word": "PHP処理系の未来", "url": "http://gihyo.jp/dev/column/newyear/2015/php-future"},

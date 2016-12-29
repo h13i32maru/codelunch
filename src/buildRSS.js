@@ -27,7 +27,7 @@ function buildRSS(forceUpdate) {
       url: url,
       guid: url,
       date: episode.date,
-      enclosure: {url: episode.audio, type: 'audio/mpeg'},
+      enclosure: {url: episode.audio, type: 'audio/mpeg', size: episode.size},
       custom_elements: [
         {'itunes:duration': episode.time}
       ]
