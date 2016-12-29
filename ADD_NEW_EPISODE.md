@@ -1,0 +1,7 @@
+- upload `episode?.mp3` to [github releases](https://github.com/h13i32maru/codelunch/releases)
+- get url from [bit.ly](https://bitly.com/)
+- write `./episodes/yyyy-mm-dd.json`
+- exec `npm run build`
+- exec `npm run start` and check `http://localhost:8888`
+- `git commit`
+- `git push`
