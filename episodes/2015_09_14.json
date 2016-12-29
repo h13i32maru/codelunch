@@ -4,6 +4,7 @@
   "time": "1:18:7",
   "title": "The power-assert Goes To The Next Scene",
   "text": "@t_wadaさんとpower-assert1.0.0リリースを記念して、内部的な実装や今後の方向などを話しました(後編)",
+  "audio": "http://bit.ly/2hPAJX8",
   "notice": "",
   "words": [
     {"word": "Big Restructuring: Canonical Assertion", "url": "https://github.com/power-assert-js/espower/pull/8"},

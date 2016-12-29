@@ -4,7 +4,7 @@
     <description><![CDATA[エンジニアがランチの時に話すような技術ネタを紹介するポッドキャストです。]]></description>
     <link>http://codelunch.fm</link>
     <generator>RSS for Node</generator>
-    <lastBuildDate>Thu, 29 Dec 2016 02:49:40 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 29 Dec 2016 06:35:14 GMT</lastBuildDate>
     <atom:link href="http://codelunch.fm/rss.xml" rel="self" type="application/rss+xml"/>
     <author><![CDATA[Ryo Maruyama]]></author>
     <copyright><![CDATA[2013 Ryo Maruyama]]></copyright>
@@ -28,7 +28,7 @@
       <guid isPermaLink="false">http://codelunch.fm/20</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Tue, 27 Dec 2016 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/20/episode20.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2ia91qX" length="0" type="false"/>
       <itunes:duration>1:7:46</itunes:duration>
     </item>
     <item>
@@ -38,7 +38,7 @@
       <guid isPermaLink="false">http://codelunch.fm/19</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sun, 27 Dec 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/19/episode19.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2igpzM5" length="0" type="false"/>
       <itunes:duration>1:26:09</itunes:duration>
     </item>
     <item>
@@ -48,7 +48,7 @@
       <guid isPermaLink="false">http://codelunch.fm/18</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sun, 20 Dec 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/18/episode18.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2igfQVX" length="0" type="false"/>
       <itunes:duration>42:20</itunes:duration>
     </item>
     <item>
@@ -58,7 +58,7 @@
       <guid isPermaLink="false">http://codelunch.fm/17</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sun, 13 Sep 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/17/episode17.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2hPAJX8" length="0" type="false"/>
       <itunes:duration>1:18:7</itunes:duration>
     </item>
     <item>
@@ -68,7 +68,7 @@
       <guid isPermaLink="false">http://codelunch.fm/16</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sun, 06 Sep 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/16/episode16.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2hqR97i" length="0" type="false"/>
       <itunes:duration>1:04:13</itunes:duration>
     </item>
     <item>
@@ -78,7 +78,7 @@
       <guid isPermaLink="false">http://codelunch.fm/15</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sun, 16 Aug 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/15/episode15.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2isUgNy" length="0" type="false"/>
       <itunes:duration>51:13</itunes:duration>
     </item>
     <item>
@@ -88,7 +88,7 @@
       <guid isPermaLink="false">http://codelunch.fm/14</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Mon, 29 Jun 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/14/episode14.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2hv8P4J" length="0" type="false"/>
       <itunes:duration>1:01:06</itunes:duration>
     </item>
     <item>
@@ -98,7 +98,7 @@
       <guid isPermaLink="false">http://codelunch.fm/13</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sat, 13 Jun 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/13/episode13.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2hv88sm" length="0" type="false"/>
       <itunes:duration>50:24</itunes:duration>
     </item>
     <item>
@@ -108,7 +108,7 @@
       <guid isPermaLink="false">http://codelunch.fm/12</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Wed, 13 May 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/12/episode12.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2hyll5c" length="0" type="false"/>
       <itunes:duration>46:43</itunes:duration>
     </item>
     <item>
@@ -118,7 +118,7 @@
       <guid isPermaLink="false">http://codelunch.fm/11</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Mon, 27 Apr 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/11/episode11.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2iai7US" length="0" type="false"/>
       <itunes:duration>1:05:13</itunes:duration>
     </item>
     <item>
@@ -128,7 +128,7 @@
       <guid isPermaLink="false">http://codelunch.fm/10</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Tue, 07 Apr 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/10/episode10.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2hqSlr6" length="0" type="false"/>
       <itunes:duration>1:10:37</itunes:duration>
     </item>
     <item>
@@ -138,7 +138,7 @@
       <guid isPermaLink="false">http://codelunch.fm/9a</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sat, 21 Mar 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/9a/episode9a.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2igmqMb" length="0" type="false"/>
       <itunes:duration>17:55</itunes:duration>
     </item>
     <item>
@@ -148,7 +148,7 @@
       <guid isPermaLink="false">http://codelunch.fm/9</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sat, 14 Mar 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/9/episode9.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2iGYR2h" length="0" type="false"/>
       <itunes:duration>01:09:14</itunes:duration>
     </item>
     <item>
@@ -158,7 +158,7 @@
       <guid isPermaLink="false">http://codelunch.fm/8</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sat, 21 Feb 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/8/episode8.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2iab5zj" length="0" type="false"/>
       <itunes:duration>39:19</itunes:duration>
     </item>
     <item>
@@ -168,7 +168,7 @@
       <guid isPermaLink="false">http://codelunch.fm/7</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Fri, 06 Feb 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/7/episode7.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2ijKmRm" length="0" type="false"/>
       <itunes:duration>48:54</itunes:duration>
     </item>
     <item>
@@ -178,7 +178,7 @@
       <guid isPermaLink="false">http://codelunch.fm/6</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Thu, 29 Jan 2015 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/6/episode6.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2ijNX1D" length="0" type="false"/>
       <itunes:duration>52:33</itunes:duration>
     </item>
     <item>
@@ -188,7 +188,7 @@
       <guid isPermaLink="false">http://codelunch.fm/5</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Fri, 26 Dec 2014 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/5/episode5.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2iacOV5" length="0" type="false"/>
       <itunes:duration>36:51</itunes:duration>
     </item>
     <item>
@@ -198,7 +198,7 @@
       <guid isPermaLink="false">http://codelunch.fm/4</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Fri, 14 Mar 2014 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/4/episode4.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2iGUkNl" length="0" type="false"/>
       <itunes:duration>44:17</itunes:duration>
     </item>
     <item>
@@ -208,7 +208,7 @@
       <guid isPermaLink="false">http://codelunch.fm/3</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sat, 22 Feb 2014 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/3/episode3.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2hyeIjm" length="0" type="false"/>
       <itunes:duration>34:08</itunes:duration>
     </item>
     <item>
@@ -218,7 +218,7 @@
       <guid isPermaLink="false">http://codelunch.fm/2</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sat, 25 Jan 2014 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/2/episode2.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2hv1r9G" length="0" type="false"/>
       <itunes:duration>24:45</itunes:duration>
     </item>
     <item>
@@ -228,7 +228,7 @@
       <guid isPermaLink="false">http://codelunch.fm/1</guid>
       <dc:creator><![CDATA[Ryo Maruyama]]></dc:creator>
       <pubDate>Sat, 14 Dec 2013 15:00:00 GMT</pubDate>
-      <enclosure url="http://codelunch.fm/1/episode1.mp3" length="0" type="audio/mpeg"/>
+      <enclosure url="http://bit.ly/2isPHDg" length="0" type="false"/>
       <itunes:duration>55:56</itunes:duration>
     </item>
   </channel>

@@ -21,14 +21,13 @@ function buildRSS(forceUpdate) {
   for (let i = 0; i < episodes.length; i++) {
     const episode = episodes[i];
     const url = rss.site_url + '/' + episode.ep;
-    const download = rss.site_url + '/' + episode.ep + '/episode' + episode.ep + '.mp3';
     feed.item({
       title: episode.ep + '. ' + episode.title,
       description: episode.text,
       url: url,
       guid: url,
       date: episode.date,
-      enclosure: {url: download},
+      enclosure: {url: episode.audio},
       custom_elements: [
         {'itunes:duration': episode.time}
       ]

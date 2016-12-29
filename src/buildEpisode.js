@@ -23,15 +23,14 @@ function buildEpisode(forceUpdate){
     }
 
     const ice = new IceCap(template);
-    const mp3 = 'episode' + episode.ep + '.mp3';
     ice.text('number', episode.ep);
     ice.text('title', episode.title);
     ice.load('text', util.replaceTwitter(episode.text));
     ice.text('date', episode.date);
     ice.text('time', episode.time);
     ice.text('notice', episode.notice);
-    ice.attr('audio', 'src', mp3);
-    ice.attr('download', 'href', mp3);
+    ice.attr('audio', 'src', episode.audio);
+    ice.attr('download', 'href', episode.audio);
     ice.loop('showNote', episode.words, function(i, word, ice){
       ice.attr('showNoteLink', 'href', word.url);
       ice.text('showNoteLink', word.word);
