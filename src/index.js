@@ -4,4 +4,4 @@ const buildRSS = require('./buildRss.js');
 
 buildIndex();
 buildEpisode();
-buildRSS();
+buildRSS(true);
