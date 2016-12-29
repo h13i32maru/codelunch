@@ -3,6 +3,7 @@
   "name" : "CodeLunch.fm",
   "description" : "Build CodeLunch.fm HTML from JSON",
   "version" : "0.0.1",
+  "private": true,
   "scripts": {
     "build": "bash ./script/build.sh",
     "upload": "bash ./script/upload.sh",

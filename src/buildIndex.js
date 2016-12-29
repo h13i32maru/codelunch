@@ -1,7 +1,7 @@
 'use strict';
-var IceCap = require('ice-cap');
-var fs = require('fs-extra');
-var util = require('./util.js');
+const IceCap = require('ice-cap').default;
+const fs = require('fs-extra');
+const util = require('./util.js');
 
 function buildIndex(forceUpdate){
   var episodes = util.getEpisodes();
