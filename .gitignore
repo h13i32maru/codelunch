@@ -1,4 +1,2 @@
 node_modules
-/www/[0-9]*
-/www/index.html
-/www/rss.xml
+*.mp3

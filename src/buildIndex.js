@@ -6,7 +6,7 @@ const util = require('./util.js');
 function buildIndex(forceUpdate){
   const episodes = util.getEpisodes();
   const latestUnixTime = util.getLatestUnixTime(episodes);
-  const outPath = './www/index.html';
+  const outPath = './docs/index.html';
   const layoutPath = './src/template/layout.html';
   const templatePath = './src/template/index.html';
 

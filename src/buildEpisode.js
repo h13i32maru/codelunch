@@ -14,7 +14,7 @@ function buildEpisode(forceUpdate){
 
   for (let i = 0; i < episodes.length; i++) {
     const episode = episodes[i];
-    const filePath = './www/' + episode.ep + '/index.html';
+    const filePath = './docs/' + episode.ep + '/index.html';
 
     if (!forceUpdate) {
       if (!util.isNeedUpdate(filePath, [episode.unixTime, templatePath, layoutPath])) {

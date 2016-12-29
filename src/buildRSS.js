@@ -5,7 +5,7 @@ const util = require('./util.js');
 function buildRSS(forceUpdate) {
   const episodes = util.getEpisodes();
   const latestUnixTime = util.getLatestUnixTime(episodes);
-  const outPath = './www/rss.xml';
+  const outPath = './docs/rss.xml';
   const templatePath = './src/template/rss.json';
 
   if (!forceUpdate) {
