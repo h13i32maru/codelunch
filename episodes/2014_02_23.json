@@ -4,7 +4,8 @@
   "time": "34:08",
   "title": "NaN-BoxingによるJavaScriptの最適化",
   "text": "今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。",
-  "audio": "http://bit.ly/2hyeIjm",
+  "gh_audio": "http://bit.ly/2hyeIjm",
+  "audio": "http://file.codelunch.fm/3/episode3.mp3",
   "size": 16835425,
   "words": [
     {"word": "Cマウント TV 1.4レンズ"},
