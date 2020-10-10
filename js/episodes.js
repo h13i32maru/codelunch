@@ -11,7 +11,7 @@
  *  notice?: string,
  *  }[]}
  */
-window.episodes = [
+episodes = [
   {
     number: 20,
     title: 'A child sleeps at sunset.',

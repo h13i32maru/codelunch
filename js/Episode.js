@@ -25,9 +25,6 @@ class Episodes {
    */
   renderEpisode(number) {
     const episode = window.episodes.find(episode => episode.number === number);
-
-    document.querySelector('head title').textContent = `${episode.number}. ${episode.title} | CodeLunch.fm`;
-
     return `
       <article class="episode">
         <div class="body">
