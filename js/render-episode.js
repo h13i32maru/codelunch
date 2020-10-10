@@ -1,4 +1,4 @@
-const numberStr = location.href.replace('/index.html', '').split('/').reverse()[0];
-const number = parseInt(numberStr, 10);
+const matched = location.href.match(/\/(\d+)\//);
+const number = parseInt(matched[1], 10);
 document.querySelector('.content').innerHTML = new Episodes().renderEpisode(number);
 
