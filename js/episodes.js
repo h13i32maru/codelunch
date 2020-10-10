@@ -336,6 +336,7 @@ episodes = [
     url: 'https://anchor.fm/h13i32maru/embed/episodes/5--Lua-Debugger-and-Clojure-on-Android-ekrjb9/a-a3gcl8h',
     speakers: [
       {name: 'tenntenn', url: 'https://twitter.com/tenntenn', icon: 'https://pbs.twimg.com/profile_images/1148841452622925825/NJuQHEqa_400x400.jpg'},
+      {name: 'iizukak', url: 'https://twitter.com/iizukak', icon: 'https://pbs.twimg.com/profile_images/728549599401549830/uZtBRntx_400x400.jpg'},
       {name: 'h13i32maru', url: 'https://twitter.com/h13i32maru', icon: 'https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg'},
     ],
     notes: [
@@ -354,6 +355,7 @@ episodes = [
     url: 'https://anchor.fm/h13i32maru/embed/episodes/4--PNaClasm-js-ekrj7s/a-a3gcg60',
     speakers: [
       {name: 'muo_jp', url: 'https://twitter.com/muo_jp', icon: 'https://pbs.twimg.com/profile_images/547888767437008898/l_5PlZX0_400x400.jpeg'},
+      {name: 'iizukak', url: 'https://twitter.com/iizukak', icon: 'https://pbs.twimg.com/profile_images/728549599401549830/uZtBRntx_400x400.jpg'},
       {name: 'h13i32maru', url: 'https://twitter.com/h13i32maru', icon: 'https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg'},
     ],
     notes: [
@@ -375,6 +377,7 @@ episodes = [
     url: 'https://anchor.fm/h13i32maru/embed/episodes/3--NaN-BoxingJavaScript-ekrif4/a-a3gce1q',
     speakers: [
       {name: 'hnw', url: 'https://twitter.com/hnw', icon: 'https://pbs.twimg.com/profile_images/56095269/hnw-mixi_400x400.jpg'},
+      {name: 'iizukak', url: 'https://twitter.com/iizukak', icon: 'https://pbs.twimg.com/profile_images/728549599401549830/uZtBRntx_400x400.jpg'},
       {name: 'h13i32maru', url: 'https://twitter.com/h13i32maru', icon: 'https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg'},
     ],
     notes: [
@@ -399,6 +402,7 @@ episodes = [
     url: 'https://anchor.fm/h13i32maru/embed/episodes/2--Go-ekri6k/a-a3gccu9',
     speakers: [
       {name: 'tenntenn', url: 'https://twitter.com/tenntenn', icon: 'https://pbs.twimg.com/profile_images/1148841452622925825/NJuQHEqa_400x400.jpg'},
+      {name: 'iizukak', url: 'https://twitter.com/iizukak', icon: 'https://pbs.twimg.com/profile_images/728549599401549830/uZtBRntx_400x400.jpg'},
       {name: 'h13i32maru', url: 'https://twitter.com/h13i32maru', icon: 'https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg'},
     ],
     notes: [
