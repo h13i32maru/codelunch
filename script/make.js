@@ -13,7 +13,8 @@ for (const episode of global.episodes) {
   const indexHTML = templateIndexHTML
     .replace(/__TITLE__/g, `${episode.number}. ${episode.title} | CodeLunch.fm`)
     .replace(/__DESC__/g, episode.desc)
-    .replace(/__URL__/g, `https://codelunch.fm/${episode.number}`);
+    .replace(/__URL__/g, `https://codelunch.fm/${episode.number}`)
+    .replace(/__NUMBER__/g, `${episode.number}`);
 
   const dirPath = path.resolve(__dirname, `../${episode.number}`);
   fs.rmdirSync(dirPath, {recursive: true});

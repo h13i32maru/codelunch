@@ -1,4 +1,4 @@
-const matched = location.href.match(/\/(\d+)\//);
-const number = parseInt(matched[1], 10);
+const numberStr = document.querySelector('.content').getAttribute('data-episode-number');
+const number = parseInt(numberStr, 10);
 document.querySelector('.content').innerHTML = new Episodes().renderEpisode(number);
 
