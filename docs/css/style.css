@@ -45,7 +45,7 @@ header .logo {
 }
 
 header .title {
-  font-size: 2em;
+  font-size: 2.5em;
   font-weight: bold;
 }
 
@@ -82,8 +82,13 @@ header .icons img {
 .episodes .episode:hover {
   /*background: white;*/
   /*color: #444;*/
-  background: linear-gradient(-45deg, rgb(144 46 141), rgb(66 175 89));
+  /*background: linear-gradient(-45deg, rgb(144 46 141), rgb(66 175 89));*/
   /*border: solid 1px white;*/
+}
+
+.episode .body:hover {
+  /*color: #4000ff;*/
+  color: #ffd500;
 }
 
 .episode .body {
@@ -98,7 +103,7 @@ header .icons img {
 
 .episode .body .title {
   font-weight: bold;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 
 .episode .body .desc {
