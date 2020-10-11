@@ -4,8 +4,7 @@
   "private": true,
   "description": "http://codelunch.fm",
   "scripts": {
-    "make": "node ./script/make.js",
-    "build": "ts-node ./script/build.ts"
+    "build": "ts-node ./src/build.ts"
   },
   "devDependencies": {
     "@types/node": "^14.11.8",

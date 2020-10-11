@@ -8,5 +8,5 @@ http://codelunch.fm
 
 ## How to Add Episode
 - add an episode to anchor.fm
-- add an episode to `js/episodes.js`
-- `npm run make`
+- add an episode to `src/episodes.ts`
+- `npm run build`

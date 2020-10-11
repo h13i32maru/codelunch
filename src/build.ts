@@ -8,13 +8,13 @@ const episodeRender = new EpisodeRender();
 // build index.html
 {
   // load template
-  const templateIndexPath = path.resolve(__dirname, `../template/index.html`);
+  const templateIndexPath = path.resolve(__dirname, `./template/index.html`);
   const templateIndexHTML = fs.readFileSync(templateIndexPath).toString();
 
   const indexHTML = templateIndexHTML
     .replace(/__HTML__/, episodeRender.renderEpisodes(episodes));
 
-  const indexPath = path.resolve(__dirname, `../index.html`);
+  const indexPath = path.resolve(__dirname, `../docs/index.html`);
   fs.writeFileSync(indexPath, indexHTML);
   console.log(indexPath)
 }
@@ -22,7 +22,7 @@ const episodeRender = new EpisodeRender();
 // build ${number}/index.html
 {
   // load template
-  const templateIndexPath = path.resolve(__dirname, `../template/episode-index.html`);
+  const templateIndexPath = path.resolve(__dirname, `./template/episode-index.html`);
   const templateIndexHTML = fs.readFileSync(templateIndexPath).toString();
 
   // make episode file
@@ -34,7 +34,7 @@ const episodeRender = new EpisodeRender();
       .replace(/__NUMBER__/g, `${episode.number}`)
       .replace(/__HTML__/g, episodeRender.renderEpisode(episode))
 
-    const dirPath = path.resolve(__dirname, `../${episode.number}`);
+    const dirPath = path.resolve(__dirname, `../docs/${episode.number}`);
     fs.rmdirSync(dirPath, {recursive: true});
     fs.mkdirSync(dirPath);
     fs.writeFileSync(`${dirPath}/index.html`, indexHTML);
