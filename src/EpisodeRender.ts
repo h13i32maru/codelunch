@@ -3,6 +3,7 @@ import {EpisodeEntity} from './episodes';
 export class EpisodeRender {
   renderEpisodes(episodes: EpisodeEntity[]): string {
     const results = episodes.map(episode => {
+      // language=HTML
       return `
         <article class="episode">
           <a class="body" href="./${episode.number}">
@@ -19,6 +20,7 @@ export class EpisodeRender {
   }
 
   renderEpisode(episode: EpisodeEntity): string {
+    // language=HTML
     return `
       <article class="episode">
         <div class="body">
@@ -40,6 +42,7 @@ export class EpisodeRender {
 
   private renderSpeakers(speakers: EpisodeEntity['speakers']): string {
     const results = speakers.map(speaker => {
+      // language=HTML
       return `
         <a href="${speaker.url}">
           <img src="${speaker.icon}"/>
@@ -52,6 +55,7 @@ export class EpisodeRender {
 
   private renderNotes(notes: EpisodeEntity['notes']): string {
     const results = notes.map(note => {
+      // language=HTML
       return `
         <li class="note">
           <a href="${note.url}">${note.text}</a>
