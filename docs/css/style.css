@@ -98,12 +98,16 @@ header .icons img {
 .episode .body .date {
   font-size: 0.8em;
   display: inline-block;
-  margin-bottom: 2px;
 }
 
 .episode .body .title {
+  margin-top: 2px;
   font-weight: bold;
   font-size: 1.5em;
+}
+
+.episode .body .title .number {
+  margin-right: 8px;
 }
 
 .episode .body .desc {
@@ -138,6 +142,22 @@ header .icons img {
 .episode .notes .note {
   padding: 4px 0;
   margin-left: 20px;
+}
+
+.episode .notice {
+  background: white;
+  padding: 8px;
+  font-size: 0.85em;
+  border: solid 1px #126012;
+  color: #666666;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.episode .notice img {
+  width: 20px;
+  vertical-align: middle;
+  margin-right: 4px;
 }
 
 /*footer*/

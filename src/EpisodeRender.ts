@@ -8,7 +8,7 @@ export class EpisodeRender {
         <article class="episode">
           <a class="body" href="./${episode.number}">
             <div class="date">${episode.created.split('T')[0]}</div>
-            <div class="title">${episode.number}. ${episode.title}</div>
+            <div class="title"><span class="number">${episode.number}.</span>${episode.title}</div>
             <div class="desc">${episode.desc}</div>
           </a>
           <div class="speakers">${this.renderSpeakers(episode.speakers)}</div>
@@ -25,9 +25,10 @@ export class EpisodeRender {
       <article class="episode">
         <div class="body">
           <div class="date">${episode.created.split('T')[0]}</div>
-          <div class="title">${episode.number}. ${episode.title}</div>
+          <div class="title"><span class="number">${episode.number}.</span>${episode.title}</div>
           <div class="desc">${episode.desc}</div>
         </div>
+        ${this.renderNotice(episode.notice)}
         <iframe src="${episode.url}" height="102px" width="100%" frameborder="0" scrolling="no"></iframe>
         <div class="speakers">${this.renderSpeakers(episode.speakers)}</div>
         <div class="notes">
@@ -64,6 +65,15 @@ export class EpisodeRender {
     });
 
     return results.join('\n');
+  }
+
+  private renderNotice(notice?: string): string {
+    if (!notice) return '';
+
+    // language=HTML
+    return `
+      <div class="notice"><img src="../image/info.png"/>${notice}</div>
+    `;
   }
 }
 
