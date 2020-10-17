@@ -16,6 +16,10 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+img {
+  max-width: 100%;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -62,10 +66,6 @@ header .icons a {
   padding: 10px;
 }
 
-header .icons img {
-  max-width: 100%;
-}
-
 /*episode*/
 .episode {
   max-width: 600px;
@@ -86,7 +86,7 @@ header .icons img {
   /*border: solid 1px white;*/
 }
 
-.episode .body:hover {
+.episodes .episode .body:hover {
   /*color: #4000ff;*/
   color: #ffd500;
 }
@@ -98,6 +98,13 @@ header .icons img {
 .episode .body .date {
   font-size: 0.8em;
   display: inline-block;
+}
+
+.episode .body .share {
+  background: #1DA1F2;
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin-left: 8px;
 }
 
 .episode .body .title {

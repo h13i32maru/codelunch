@@ -20,11 +20,17 @@ export class EpisodeRender {
   }
 
   renderEpisode(episode: EpisodeEntity): string {
+    const shareURL = encodeURIComponent(`https://codelunch.fm/${episode.number}/`);
+    const tweetURL = `https://twitter.com/intent/tweet?url=${shareURL}&hashtags=codelunchfm`;
+
     // language=HTML
     return `
       <article class="episode">
         <div class="body">
-          <div class="date">${episode.created.split('T')[0]}</div>
+          <div class="date">
+            ${episode.created.split('T')[0]}
+             <a href="${tweetURL}" class="share">ツイート</a>
+          </div>
           <div class="title"><span class="number">${episode.number}.</span>${episode.title}</div>
           <div class="desc">${episode.desc}</div>
         </div>
