@@ -17,7 +17,7 @@ export const episodes: EpisodeEntity[] = [
     created: '2020-10-17T10:30:00+09:00',
     desc: '@hokacchaさんと前編(episode20)からの個人プロダクトの進捗や伏線回収を話しました',
     length: '56:07',
-    url: '',
+    url: 'https://anchor.fm/h13i32maru/embed/episodes/21--310-el6583',
     notice: 'anchor.fmでの録音を試したところ、録音結果があまり良くありませんでした。後半にいくほど声がお互いかぶりがちになってしまっています。ご了承ください。',
     speakers: [
       {name: 'hokaccha', url: 'https://twitter.com/hokaccha', icon: 'https://pbs.twimg.com/profile_images/3620394181/848a36e68e94b4b466dfb9a9a63861f6_400x400.jpeg'},
