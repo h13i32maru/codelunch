@@ -1,19 +1,15 @@
 import React from 'react';
-import { Episode } from '../Type/Episode';
-import { EpisodeRow } from '../View/EpisodeRow';
-import { PageLayout } from '../PageLayout/PageLayout';
+import { EpisodeRow } from '../view/EpisodeRow';
+import { episodes } from '../episodes';
+import { Layout } from '../layout/Layout';
 
-type Props = {
-  episodes: Episode[];
-}
-
-export const EpisodesPage: React.FC<Props> = (props) => {
-  const views = props.episodes.map(episode => {
+const EpisodesIndexPage: React.FC = () => {
+  const views = episodes.map(episode => {
     return <EpisodeRow key={episode.number} episode={episode}/>;
   });
 
   return (
-    <PageLayout
+    <Layout
       url='https://codelunch.fm'
       title='CodeLunch.fm'
       description='Technical topics that software engineers talk about at lunch.'
@@ -21,6 +17,8 @@ export const EpisodesPage: React.FC<Props> = (props) => {
       <div className='content episodes'>
         {views}
       </div>
-    </PageLayout>
+    </Layout>
   );
 };
+
+export default EpisodesIndexPage;

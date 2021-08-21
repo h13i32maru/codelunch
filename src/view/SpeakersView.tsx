@@ -1,5 +1,5 @@
 import React from 'react';
-import { Speaker } from '../Type/Speaker';
+import { Speaker } from '../type/Speaker';
 
 type Props = {
   speakers: Speaker[];

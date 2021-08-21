@@ -1,4 +1,4 @@
-import { Episode } from './Type/Episode';
+import { Episode } from './type/Episode';
 
 export const episodes: Episode[] = [
   {
@@ -627,7 +627,7 @@ export const episodes: Episode[] = [
       { 'text': 'デリー', 'url': 'http://www.delhi.co.jp/' },
       { 'text': 'IEEE754', 'url': 'http://ja.wikipedia.org/wiki/IEEE_754' },
       { 'text': '10進数小数', 'url': 'http://d.hatena.ne.jp/hnw/20131231' },
-      { 'text': 'The Number Type', 'url': 'http://www.ecma-international.org/ecma-262/5.1/#sec-8.5' },
+      { 'text': 'The Number type', 'url': 'http://www.ecma-international.org/ecma-262/5.1/#sec-8.5' },
       {
         'text': 'value representation in javascript implementations',
         'url': 'http://wingolog.org/archives/2011/05/18/value-representation-in-javascript-implementations'
