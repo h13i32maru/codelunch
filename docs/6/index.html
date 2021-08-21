@@ -1,116 +1,63 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <title>6. ECMAScript6 & Project Euler | CodeLunch.fm</title>
-  <meta name="description" content="今回は@h13i32maruと@iizukakの二人で、ECMAScript6とProject Eulerについて話をしました。">
-  <link rel="shortcut icon" href="../image/artwork.jpg">
-
-  <meta property="og:url" content="https://codelunch.fm/6">
-  <meta property="og:site_name" content="CodeLunch.fm">
-  <meta property="og:title" content="6. ECMAScript6 & Project Euler | CodeLunch.fm">
-  <meta property="og:description" content="今回は@h13i32maruと@iizukakの二人で、ECMAScript6とProject Eulerについて話をしました。">
-  <meta property="og:type" content="website">
-  <meta property="og:author" content="https://twitter.com/h13i32maru">
-  <meta property="og:image" content="http://codelunch.fm/image/artwork.jpg">
-  <meta property="og:image:width" content="512">
-  <meta property="og:image:height" content="512">
-
-  <meta property="twitter:card" content="summary">
-  <meta property="twitter:site" content="@h13i32maru">
-  <meta property="twitter:creator" content="@h13i32maru">
-  <meta property="twitter:title" content="6. ECMAScript6 & Project Euler | CodeLunch.fm">
-  <meta property="twitter:description" content="今回は@h13i32maruと@iizukakの二人で、ECMAScript6とProject Eulerについて話をしました。">
-  <meta property="twitter:image:src" content="http://codelunch.fm/image/artwork.jpg">
-  <meta property="twitter:image:width" content="512">
-  <meta property="twitter:image:height" content="512">
-
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>6. ECMAScript6 &amp; Project Euler | CodeLunch.fm</title>
+    <meta name="description" content="今回は@h13i32maruと@iizukakの二人で、ECMAScript6とProject Eulerについて話をしました。" />
+    <link rel="shortcut icon" href="/image/artwork.jpg" />
+    <meta property="og:url" content="https://codelunch.fm/6" />
+    <meta property="og:site_name" content="CodeLunch.fm" />
+    <meta property="og:title" content="6. ECMAScript6 &amp; Project Euler | CodeLunch.fm" />
+    <meta property="og:description" content="今回は@h13i32maruと@iizukakの二人で、ECMAScript6とProject Eulerについて話をしました。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:author" content="https://twitter.com/h13i32maru" />
+    <meta property="og:image" content="https://codelunch.fm/image/artwork.jpg" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@h13i32maru" />
+    <meta property="twitter:creator" content="@h13i32maru" />
+    <meta property="twitter:title" content="6. ECMAScript6 &amp; Project Euler | CodeLunch.fm" />
+    <meta property="twitter:description" content="今回は@h13i32maruと@iizukakの二人で、ECMAScript6とProject Eulerについて話をしました。" />
+    <meta property="twitter:image:src" content="https://codelunch.fm/image/artwork.jpg" />
+    <meta property="twitter:image:width" content="512" />
+    <meta property="twitter:image:height" content="512" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
 </head>
+
 <body>
-<div class="bg"></div>
-
-<header>
-  <a href="/">
-    <img src="../image/artwork.jpg" class="logo"/>
-    <div class="title">CodeLunch.fm</div>
-  </a>
-  <div class="icons">
-    <a href="https://twitter.com/h13i32maru"><img src="../image/twitter.png"></a>
-    <a href="https://anchor.fm/s/77d9b6c/podcast/rss"><img src="../image/rss.png"></a>
-    <a href="https://podcasts.apple.com/jp/podcast/codelunch-fm/id965805982"><img src="../image/podcast.png"></a>
-<!--    <a href="https://podcasts.google.com/feed/aHR0cHM6Ly9jb2RlbHVuY2guZm0vcnNzLnhtbA?sa=X&ved=0CAIQ4aUDahcKEwjAmNH0uqvsAhUAAAAAHQAAAAAQDQ"><img src="../image/google-podcast.png"></a>-->
-    <a href="https://open.spotify.com/show/3vVss8nt0eT89tqrac0UAN"><img src="../image/spotify.png"></a>
-  </div>
-  <div>Technical topics that software engineers talk about at lunch.</div>
-</header>
-
-<div class="content">
-      <article class="episode">
-        <div class="body">
-          <div class="date">
-            2015-01-30
-             <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcodelunch.fm%2F6%2F&hashtags=codelunchfm" class="share">ツイート</a>
-          </div>
-          <div class="title"><span class="number">6.</span>ECMAScript6 & Project Euler</div>
-          <div class="desc">今回は@h13i32maruと@iizukakの二人で、ECMAScript6とProject Eulerについて話をしました。</div>
-        </div>
-        
-      <div class="notice"><img src="../image/info.png"/>番組中で「coはnodeの開発者によって作られたと」とお話しましたが、主要なコミッタではないようでした。</div>
-    
-        <iframe src="https://anchor.fm/h13i32maru/embed/episodes/6--ECMAScript6--Project-Euler-ekrji3/a-a3gclsv" height="102px" width="100%" frameborder="0" scrolling="no"></iframe>
-        <div class="speakers">
-        <a href="https://twitter.com/iizukak">
-          <img src="https://pbs.twimg.com/profile_images/728549599401549830/uZtBRntx_400x400.jpg"/>
+    <div class="bg"></div>
+    <header><a href="/"><img src="/image/artwork.jpg" class="logo" />
+            <div class="title">CodeLunch.fm</div>
         </a>
-      
-
-        <a href="https://twitter.com/h13i32maru">
-          <img src="https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg"/>
-        </a>
-      </div>
-        <div class="notes">
-          <div class="notes-label">Show Notes</div>
-          <ul>
-            
-        <li class="note">
-          <a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts">ECMAScript6</a>
-        </li>
-      
-
-        <li class="note">
-          <a href="http://www.2ality.com/2015/01/es6-destructuring.html">Destructuring and parameter handling in ECMAScript 6</a>
-        </li>
-      
-
-        <li class="note">
-          <a href="http://blog.h13i32maru.jp/entry/2015/01/02/225457">ES6 Generatorを使ってasync/awaitを実装するメモ</a>
-        </li>
-      
-
-        <li class="note">
-          <a href="http://kangax.github.io/compat-table/es6/">ECMAScript compatibility table</a>
-        </li>
-      
-
-        <li class="note">
-          <a href="https://projecteuler.net/">Project Euler</a>
-        </li>
-      
-
-        <li class="note">
-          <a href="http://www.amazon.co.jp/ebook/dp/B00O1VJZLO/">火星の人</a>
-        </li>
-      
-          </ul>
-        </div>
-      </article>
+        <div class="icons"><a href="https://twitter.com/h13i32maru" target="_blank"><img src="/image/twitter.png" /></a><a href="https://anchor.fm/s/77d9b6c/podcast/rss" target="_blank"><img src="/image/rss.png" /></a><a href="https://podcasts.apple.com/jp/podcast/codelunch-fm/id965805982" target="_blank"><img src="/image/podcast.png" /></a><a href="https://open.spotify.com/show/3vVss8nt0eT89tqrac0UAN" target="_blank"><img src="/image/spotify.png" /></a></div>
+        <div>Technical topics that software engineers talk about at lunch.</div>
+    </header>
+    <div class="content">
+        <article class="episode"><a class="body">
+                <div class="date">2015-01-30</div>
+                <div class="title"><span class="number">6.</span>ECMAScript6 &amp; Project Euler</div>
+                <div class="desc">今回は@h13i32maruと@iizukakの二人で、ECMAScript6とProject Eulerについて話をしました。</div>
+            </a>
+            <div class="notice"><img src="/image/info.png" />番組中で「coはnodeの開発者によって作られたと」とお話しましたが、主要なコミッタではないようでした。</div><iframe src="https://anchor.fm/h13i32maru/embed/episodes/6--ECMAScript6--Project-Euler-ekrji3/a-a3gclsv" height="102px" width="100%" frameBorder="0" scrolling="no"></iframe>
+            <div class="speakers"><a href="https://twitter.com/iizukak" target="_blank"><img src="https://pbs.twimg.com/profile_images/728549599401549830/uZtBRntx_400x400.jpg" /></a><a href="https://twitter.com/h13i32maru" target="_blank"><img src="https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg" /></a></div>
+            <div class="notes">
+                <div class="notes-label">Show Notes</div>
+                <ul>
+                    <li class="note"><a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts" target="_blank">ECMAScript6</a></li>
+                    <li class="note"><a href="http://www.2ality.com/2015/01/es6-destructuring.html" target="_blank">Destructuring and parameter handling in ECMAScript 6</a></li>
+                    <li class="note"><a href="http://blog.h13i32maru.jp/entry/2015/01/02/225457" target="_blank">ES6 Generatorを使ってasync/awaitを実装するメモ</a></li>
+                    <li class="note"><a href="http://kangax.github.io/compat-table/es6/" target="_blank">ECMAScript compatibility table</a></li>
+                    <li class="note"><a href="https://projecteuler.net/" target="_blank">Project Euler</a></li>
+                    <li class="note"><a href="http://www.amazon.co.jp/ebook/dp/B00O1VJZLO/" target="_blank">火星の人</a></li>
+                </ul>
+            </div>
+            <div class="footer"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcodelunch.fm%2F6%2F&amp;hashtags=codelunchfm" class="share" target="_blank">ツイート</a></div>
+        </article>
     </div>
-
-<footer>
-  Copyright 2013 - 2020 by <a href="https://twitter.com/h13i32maru">Ryo Maruyama</a> all right reserved.
-</footer>
-
+    <footer>Copyright 2013 - 2021 by <a href="https://twitter.com/h13i32maru" target="_blank">Ryo Maruyama</a> all right reserved.</footer>
 </body>
+
 </html>
