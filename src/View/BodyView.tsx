@@ -22,7 +22,8 @@ export const BodyView: React.FC = (props) => {
       {props.children}
 
       <footer>
-        Copyright 2013 - 2020 by <a href='https://twitter.com/h13i32maru'>Ryo Maruyama</a> all right reserved.
+        Copyright 2013 - {new Date().getFullYear()} by <a href='https://twitter.com/h13i32maru'>Ryo Maruyama</a> all
+        right reserved.
       </footer>
     </body>
   );
