@@ -9,6 +9,10 @@ type Props = {
 }
 
 export const EpisodesPage: React.FC<Props> = (props) => {
+  const views = props.episodes.map(episode => {
+    return <EpisodeRow key={episode.number} episode={episode}/>;
+  });
+
   return (
     <html>
       <HeadView
@@ -17,9 +21,9 @@ export const EpisodesPage: React.FC<Props> = (props) => {
         description='Technical topics that software engineers talk about at lunch.'
       />
       <BodyView>
-        {
-          props.episodes.map(episode => <EpisodeRow episode={episode}/>)
-        }
+        <div className='content episodes'>
+          {views}
+        </div>
       </BodyView>
     </html>
   );

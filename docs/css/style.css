@@ -10,7 +10,7 @@ html {
 body {
   font-size: 14px;
   color: white;
-  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 
   /*https://zenn.dev/takamoso/articles/2020-08-tips*/
   -webkit-text-size-adjust: 100%;
@@ -64,6 +64,7 @@ header .icons a {
   background: gray;
   border-radius: 100%;
   padding: 10px;
+  margin: 0 4px;
 }
 
 /*episode*/
@@ -100,13 +101,6 @@ header .icons a {
   display: inline-block;
 }
 
-.episode .body .share {
-  background: #1DA1F2;
-  border-radius: 4px;
-  padding: 2px 4px;
-  margin-left: 8px;
-}
-
 .episode .body .title {
   margin-top: 2px;
   font-weight: bold;
@@ -131,6 +125,7 @@ header .icons a {
 
 .episode .speakers a {
   display: inline-block;
+  margin-right: 8px;
 }
 
 .episode .speakers img {
@@ -165,6 +160,16 @@ header .icons a {
   width: 20px;
   vertical-align: middle;
   margin-right: 4px;
+}
+
+.episode .footer {
+  text-align: right;
+}
+
+.episode .footer .share {
+  background: #1DA1F2;
+  border-radius: 4px;
+  padding: 4px 8px;
 }
 
 /*footer*/

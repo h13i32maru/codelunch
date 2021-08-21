@@ -9,15 +9,19 @@ type Props = {
 }
 
 export const EpisodeDetailPage: React.FC<Props> = (props) => {
+  const { episode } = props;
+
   return (
     <html>
       <HeadView
-        url='https://codelunch.fm'
-        title='CodeLunch.fm'
-        description='Technical topics that software engineers talk about at lunch.'
+        url={`https://codelunch.fm/${episode.number}`}
+        title={`${episode.number}. ${episode.title} | CodeLunch.fm`}
+        description={episode.desc}
       />
       <BodyView>
-        <EpisodeDetail episode={props.episode}/>
+        <div className='content'>
+          <EpisodeDetail episode={episode}/>
+        </div>
       </BodyView>
     </html>
   );

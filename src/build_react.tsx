@@ -5,7 +5,7 @@ import { episodes } from './episodes';
 import ReactDOMServer from 'react-dom/server';
 import { EpisodesPage } from './Page/EpisodesPage';
 import { Episode } from './Type/Episode';
-import { EpisodeDetail } from './View/EpisodeDetail';
+import { EpisodeDetailPage } from './Page/EpisodeDetailPage';
 
 function buildEpisodesPage(episodes: Episode[]) {
   const html = ReactDOMServer.renderToStaticMarkup(<EpisodesPage episodes={episodes}/>);
@@ -17,7 +17,7 @@ function buildEpisodesPage(episodes: Episode[]) {
 
 function buildEpisodeDetailPages(episodes: Episode[]) {
   for (const episode of episodes) {
-    const html = ReactDOMServer.renderToStaticMarkup(<EpisodeDetail episode={episode}/>);
+    const html = ReactDOMServer.renderToStaticMarkup(<EpisodeDetailPage episode={episode}/>);
 
     const dirPath = path.resolve(__dirname, `../docs/${episode.number}`);
     fs.rmdirSync(dirPath, { recursive: true });
