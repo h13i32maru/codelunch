@@ -1,7 +1,8 @@
-import {EpisodeEntity} from './episodes';
+import { Speaker } from './Type/Speaker';
+import { Episode } from './Type/Episode';
 
 export class EpisodeRender {
-  renderEpisodes(episodes: EpisodeEntity[]): string {
+  renderEpisodes(episodes: Episode[]): string {
     const results = episodes.map(episode => {
       // language=HTML
       return `
@@ -13,13 +14,13 @@ export class EpisodeRender {
           </a>
           <div class="speakers">${this.renderSpeakers(episode.speakers)}</div>
         </article>
-    `;
+      `;
     });
 
     return results.join('\n');
   }
 
-  renderEpisode(episode: EpisodeEntity): string {
+  renderEpisode(episode: Episode): string {
     const shareURL = encodeURIComponent(`https://codelunch.fm/${episode.number}/`);
     const tweetURL = `https://twitter.com/intent/tweet?url=${shareURL}&hashtags=codelunchfm`;
 
@@ -29,7 +30,7 @@ export class EpisodeRender {
         <div class="body">
           <div class="date">
             ${episode.created.split('T')[0]}
-             <a href="${tweetURL}" class="share">ツイート</a>
+            <a href="${tweetURL}" class="share">ツイート</a>
           </div>
           <div class="title"><span class="number">${episode.number}.</span>${episode.title}</div>
           <div class="desc">${episode.desc}</div>
@@ -47,7 +48,7 @@ export class EpisodeRender {
     `;
   }
 
-  private renderSpeakers(speakers: EpisodeEntity['speakers']): string {
+  private renderSpeakers(speakers: Speaker[]): string {
     const results = speakers.map(speaker => {
       // language=HTML
       return `
@@ -60,7 +61,7 @@ export class EpisodeRender {
     return results.join('\n');
   }
 
-  private renderNotes(notes: EpisodeEntity['notes']): string {
+  private renderNotes(notes: Episode['notes']): string {
     const results = notes.map(note => {
       // language=HTML
       return `
