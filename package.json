@@ -4,9 +4,9 @@
   "private": true,
   "description": "https://codelunch.fm",
   "scripts": {
-    "serve": "http-server ./docs -p 8082",
     "next:dev": "next dev -p 8080",
-    "next:export": "next build && next export -o ./docs"
+    "next:export": "next build && next export -o ./docs",
+    "serve": "http-server ./docs -p 8082"
   },
   "devDependencies": {
     "@types/node": "^14.11.8",
