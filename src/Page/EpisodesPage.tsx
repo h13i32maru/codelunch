@@ -1,8 +1,7 @@
 import React from 'react';
 import { Episode } from '../Type/Episode';
-import { HeadView } from '../View/HeadView';
-import { BodyView } from '../View/BodyView';
 import { EpisodeRow } from '../View/EpisodeRow';
+import { PageLayout } from '../PageLayout/PageLayout';
 
 type Props = {
   episodes: Episode[];
@@ -14,17 +13,14 @@ export const EpisodesPage: React.FC<Props> = (props) => {
   });
 
   return (
-    <html lang='ja'>
-      <HeadView
-        url='https://codelunch.fm'
-        title='CodeLunch.fm'
-        description='Technical topics that software engineers talk about at lunch.'
-      />
-      <BodyView>
-        <div className='content episodes'>
-          {views}
-        </div>
-      </BodyView>
-    </html>
+    <PageLayout
+      url='https://codelunch.fm'
+      title='CodeLunch.fm'
+      description='Technical topics that software engineers talk about at lunch.'
+    >
+      <div className='content episodes'>
+        {views}
+      </div>
+    </PageLayout>
   );
 };
