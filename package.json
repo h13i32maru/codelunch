@@ -5,7 +5,7 @@
   "description": "https://codelunch.fm",
   "scripts": {
     "start": "http-server ./docs",
-    "build": "ts-node ./src/build_react.tsx"
+    "build": "ts-node src/build.tsx"
   },
   "devDependencies": {
     "@types/node": "^14.11.8",
