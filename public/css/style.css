@@ -115,6 +115,15 @@ header .icons a {
   padding-top: 8px;
 }
 
+.episode .body .desc .twitter-id {
+  cursor: pointer;
+}
+
+.episode .body .desc .twitter-id:hover {
+  color: #00daff;
+  text-decoration: underline;
+}
+
 .episode iframe {
   margin-top: 12px;
 }
