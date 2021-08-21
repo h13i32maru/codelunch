@@ -1,4 +1,5 @@
 import { Speaker } from './Speaker';
+import { Note } from './Note';
 
 export type Episode = {
   number: number;
@@ -8,7 +9,7 @@ export type Episode = {
   length: string;
   url: string;
   speakers: Speaker[];
-  notes: {text: string; url: string}[];
+  notes: Note[];
   notice?: string;
 };
 

@@ -1,5 +1,6 @@
 import { Speaker } from './Type/Speaker';
 import { Episode } from './Type/Episode';
+import { Note } from './Type/Note';
 
 export class EpisodeRender {
   renderEpisodes(episodes: Episode[]): string {
@@ -61,7 +62,7 @@ export class EpisodeRender {
     return results.join('\n');
   }
 
-  private renderNotes(notes: Episode['notes']): string {
+  private renderNotes(notes: Note[]): string {
     const results = notes.map(note => {
       // language=HTML
       return `
