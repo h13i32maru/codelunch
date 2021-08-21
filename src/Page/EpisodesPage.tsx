@@ -14,7 +14,7 @@ export const EpisodesPage: React.FC<Props> = (props) => {
   });
 
   return (
-    <html>
+    <html lang='ja'>
       <HeadView
         url='https://codelunch.fm'
         title='CodeLunch.fm'

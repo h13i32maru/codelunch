@@ -12,7 +12,7 @@ export const EpisodeDetailPage: React.FC<Props> = (props) => {
   const { episode } = props;
 
   return (
-    <html>
+    <html lang='ja'>
       <HeadView
         url={`https://codelunch.fm/${episode.number}`}
         title={`${episode.number}. ${episode.title} | CodeLunch.fm`}

@@ -1,2 +1,66 @@
 <!DOCTYPE html>
-<html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><title>16. The power-assert Leaves From Moratorium | CodeLunch.fm</title><meta name="description" content="@t_wadaさんとpower-assert1.0.0リリースを記念して、開発のきっかけや設計思想などについて話をしました(前編)"/><link rel="shortcut icon" href="/image/artwork.jpg"/><meta property="og:url" content="https://codelunch.fm/16"/><meta property="og:site_name" content="CodeLunch.fm"/><meta property="og:title" content="16. The power-assert Leaves From Moratorium | CodeLunch.fm"/><meta property="og:description" content="@t_wadaさんとpower-assert1.0.0リリースを記念して、開発のきっかけや設計思想などについて話をしました(前編)"/><meta property="og:type" content="website"/><meta property="og:author" content="https://twitter.com/h13i32maru"/><meta property="og:image" content="https://codelunch.fm/image/artwork.jpg"/><meta property="og:image:width" content="512"/><meta property="og:image:height" content="512"/><meta property="twitter:card" content="summary"/><meta property="twitter:site" content="@h13i32maru"/><meta property="twitter:creator" content="@h13i32maru"/><meta property="twitter:title" content="16. The power-assert Leaves From Moratorium | CodeLunch.fm"/><meta property="twitter:description" content="@t_wadaさんとpower-assert1.0.0リリースを記念して、開発のきっかけや設計思想などについて話をしました(前編)"/><meta property="twitter:image:src" content="https://codelunch.fm/image/artwork.jpg"/><meta property="twitter:image:width" content="512"/><meta property="twitter:image:height" content="512"/><link rel="stylesheet" type="text/css" href="/css/style.css"/></head><body><div class="bg"></div><header><a href="/"><img src="/image/artwork.jpg" class="logo"/><div class="title">CodeLunch.fm</div></a><div class="icons"><a href="https://twitter.com/h13i32maru"><img src="/image/twitter.png"/></a><a href="https://anchor.fm/s/77d9b6c/podcast/rss"><img src="/image/rss.png"/></a><a href="https://podcasts.apple.com/jp/podcast/codelunch-fm/id965805982"><img src="/image/podcast.png"/></a><a href="https://open.spotify.com/show/3vVss8nt0eT89tqrac0UAN"><img src="/image/spotify.png"/></a></div><div>Technical topics that software engineers talk about at lunch.</div></header><div class="content"><article class="episode"><a class="body"><div class="date">2015-09-07</div><div class="title"><span class="number">16.</span>The power-assert Leaves From Moratorium</div><div class="desc">@t_wadaさんとpower-assert1.0.0リリースを記念して、開発のきっかけや設計思想などについて話をしました(前編)</div></a><iframe src="https://anchor.fm/h13i32maru/embed/episodes/16--The-power-assert-Leaves-From-Moratorium-ekroj6/a-a3gdiiv" height="102px" width="100%" frameBorder="0" scrolling="no"></iframe><div class="speakers"><a href="https://twitter.com/t_wada" target="_blank"><img src="https://pbs.twimg.com/profile_images/421959794/TQ_LOGO_400x400.png"/></a><a href="https://twitter.com/h13i32maru" target="_blank"><img src="https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg"/></a></div><div class="notes"><div class="notes-label">Show Notes</div><ul><li class="note"><a href="https://github.com/power-assert-js" target="_blank">power-assert</a></li><li class="note"><a href="http://semver.npmjs.com/" target="_blank">npm semantic version calculator</a></li><li class="note"><a href="http://semver.org/lang/ja/" target="_blank">セマンティック バージョニング 2.0.0</a></li><li class="note"><a href="https://github.com/spockframework/spock" target="_blank">Spock</a></li><li class="note"><a href="https://github.com/estools" target="_blank">ECMAScript Tooling</a></li><li class="note"><a href="http://nodefest.jp/2012/" target="_blank">Node学園祭2012</a></li><li class="note"><a href="http://togetter.com/li/435920" target="_blank">Power Assertの系譜</a></li><li class="note"><a href="http://twada.herokuapp.com/presentations/power-assert-begins/power-assert-begins.html" target="_blank">power-assert ができるまで</a></li><li class="note"><a href="http://eed3si9n.com/ja/simplicity-matters" target="_blank">シンプルさの必要性</a></li><li class="note"><a href="http://www.amazon.co.jp/dp/0596007434" target="_blank">Frameworks should evolve slowly</a></li></ul></div><div class="footer"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcodelunch.fm%2F16%2F&amp;hashtags=codelunchfm" class="share" target="_blank">ツイート</a></div></article></div><footer>Copyright 2013 - 2021 by <a href="https://twitter.com/h13i32maru">Ryo Maruyama</a> all right reserved.</footer></body></html>
+<html lang="ja">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>16. The power-assert Leaves From Moratorium | CodeLunch.fm</title>
+    <meta name="description" content="@t_wadaさんとpower-assert1.0.0リリースを記念して、開発のきっかけや設計思想などについて話をしました(前編)" />
+    <link rel="shortcut icon" href="/image/artwork.jpg" />
+    <meta property="og:url" content="https://codelunch.fm/16" />
+    <meta property="og:site_name" content="CodeLunch.fm" />
+    <meta property="og:title" content="16. The power-assert Leaves From Moratorium | CodeLunch.fm" />
+    <meta property="og:description" content="@t_wadaさんとpower-assert1.0.0リリースを記念して、開発のきっかけや設計思想などについて話をしました(前編)" />
+    <meta property="og:type" content="website" />
+    <meta property="og:author" content="https://twitter.com/h13i32maru" />
+    <meta property="og:image" content="https://codelunch.fm/image/artwork.jpg" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@h13i32maru" />
+    <meta property="twitter:creator" content="@h13i32maru" />
+    <meta property="twitter:title" content="16. The power-assert Leaves From Moratorium | CodeLunch.fm" />
+    <meta property="twitter:description" content="@t_wadaさんとpower-assert1.0.0リリースを記念して、開発のきっかけや設計思想などについて話をしました(前編)" />
+    <meta property="twitter:image:src" content="https://codelunch.fm/image/artwork.jpg" />
+    <meta property="twitter:image:width" content="512" />
+    <meta property="twitter:image:height" content="512" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <div class="bg"></div>
+    <header><a href="/"><img src="/image/artwork.jpg" class="logo" />
+            <div class="title">CodeLunch.fm</div>
+        </a>
+        <div class="icons"><a href="https://twitter.com/h13i32maru"><img src="/image/twitter.png" /></a><a href="https://anchor.fm/s/77d9b6c/podcast/rss"><img src="/image/rss.png" /></a><a href="https://podcasts.apple.com/jp/podcast/codelunch-fm/id965805982"><img src="/image/podcast.png" /></a><a href="https://open.spotify.com/show/3vVss8nt0eT89tqrac0UAN"><img src="/image/spotify.png" /></a></div>
+        <div>Technical topics that software engineers talk about at lunch.</div>
+    </header>
+    <div class="content">
+        <article class="episode"><a class="body">
+                <div class="date">2015-09-07</div>
+                <div class="title"><span class="number">16.</span>The power-assert Leaves From Moratorium</div>
+                <div class="desc">@t_wadaさんとpower-assert1.0.0リリースを記念して、開発のきっかけや設計思想などについて話をしました(前編)</div>
+            </a><iframe src="https://anchor.fm/h13i32maru/embed/episodes/16--The-power-assert-Leaves-From-Moratorium-ekroj6/a-a3gdiiv" height="102px" width="100%" frameBorder="0" scrolling="no"></iframe>
+            <div class="speakers"><a href="https://twitter.com/t_wada" target="_blank"><img src="https://pbs.twimg.com/profile_images/421959794/TQ_LOGO_400x400.png" /></a><a href="https://twitter.com/h13i32maru" target="_blank"><img src="https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg" /></a></div>
+            <div class="notes">
+                <div class="notes-label">Show Notes</div>
+                <ul>
+                    <li class="note"><a href="https://github.com/power-assert-js" target="_blank">power-assert</a></li>
+                    <li class="note"><a href="http://semver.npmjs.com/" target="_blank">npm semantic version calculator</a></li>
+                    <li class="note"><a href="http://semver.org/lang/ja/" target="_blank">セマンティック バージョニング 2.0.0</a></li>
+                    <li class="note"><a href="https://github.com/spockframework/spock" target="_blank">Spock</a></li>
+                    <li class="note"><a href="https://github.com/estools" target="_blank">ECMAScript Tooling</a></li>
+                    <li class="note"><a href="http://nodefest.jp/2012/" target="_blank">Node学園祭2012</a></li>
+                    <li class="note"><a href="http://togetter.com/li/435920" target="_blank">Power Assertの系譜</a></li>
+                    <li class="note"><a href="http://twada.herokuapp.com/presentations/power-assert-begins/power-assert-begins.html" target="_blank">power-assert ができるまで</a></li>
+                    <li class="note"><a href="http://eed3si9n.com/ja/simplicity-matters" target="_blank">シンプルさの必要性</a></li>
+                    <li class="note"><a href="http://www.amazon.co.jp/dp/0596007434" target="_blank">Frameworks should evolve slowly</a></li>
+                </ul>
+            </div>
+            <div class="footer"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcodelunch.fm%2F16%2F&amp;hashtags=codelunchfm" class="share" target="_blank">ツイート</a></div>
+        </article>
+    </div>
+    <footer>Copyright 2013 - 2021 by <a href="https://twitter.com/h13i32maru">Ryo Maruyama</a> all right reserved.</footer>
+</body>
+
+</html>

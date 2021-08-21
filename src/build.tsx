@@ -6,9 +6,12 @@ import ReactDOMServer from 'react-dom/server';
 import { EpisodesPage } from './Page/EpisodesPage';
 import { Episode } from './Type/Episode';
 import { EpisodeDetailPage } from './Page/EpisodeDetailPage';
+import beautify from 'js-beautify';
 
 function buildEpisodesPage(episodes: Episode[]) {
-  const html = ReactDOMServer.renderToStaticMarkup(<EpisodesPage episodes={episodes}/>);
+  const html = beautify.html(
+    ReactDOMServer.renderToStaticMarkup(<EpisodesPage episodes={episodes}/>)
+  );
 
   const indexPath = path.resolve(__dirname, `../docs/index.html`);
   fs.writeFileSync(indexPath, `<!DOCTYPE html>\n${html}`);
@@ -17,7 +20,9 @@ function buildEpisodesPage(episodes: Episode[]) {
 
 function buildEpisodeDetailPages(episodes: Episode[]) {
   for (const episode of episodes) {
-    const html = ReactDOMServer.renderToStaticMarkup(<EpisodeDetailPage episode={episode}/>);
+    const html = beautify.html(
+      ReactDOMServer.renderToStaticMarkup(<EpisodeDetailPage episode={episode}/>)
+    );
 
     const dirPath = path.resolve(__dirname, `../docs/${episode.number}`);
     fs.rmdirSync(dirPath, { recursive: true });

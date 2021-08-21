@@ -1,2 +1,65 @@
 <!DOCTYPE html>
-<html><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/><title>3. NaN-BoxingによるJavaScriptの最適化 | CodeLunch.fm</title><meta name="description" content="今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。"/><link rel="shortcut icon" href="/image/artwork.jpg"/><meta property="og:url" content="https://codelunch.fm/3"/><meta property="og:site_name" content="CodeLunch.fm"/><meta property="og:title" content="3. NaN-BoxingによるJavaScriptの最適化 | CodeLunch.fm"/><meta property="og:description" content="今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。"/><meta property="og:type" content="website"/><meta property="og:author" content="https://twitter.com/h13i32maru"/><meta property="og:image" content="https://codelunch.fm/image/artwork.jpg"/><meta property="og:image:width" content="512"/><meta property="og:image:height" content="512"/><meta property="twitter:card" content="summary"/><meta property="twitter:site" content="@h13i32maru"/><meta property="twitter:creator" content="@h13i32maru"/><meta property="twitter:title" content="3. NaN-BoxingによるJavaScriptの最適化 | CodeLunch.fm"/><meta property="twitter:description" content="今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。"/><meta property="twitter:image:src" content="https://codelunch.fm/image/artwork.jpg"/><meta property="twitter:image:width" content="512"/><meta property="twitter:image:height" content="512"/><link rel="stylesheet" type="text/css" href="/css/style.css"/></head><body><div class="bg"></div><header><a href="/"><img src="/image/artwork.jpg" class="logo"/><div class="title">CodeLunch.fm</div></a><div class="icons"><a href="https://twitter.com/h13i32maru"><img src="/image/twitter.png"/></a><a href="https://anchor.fm/s/77d9b6c/podcast/rss"><img src="/image/rss.png"/></a><a href="https://podcasts.apple.com/jp/podcast/codelunch-fm/id965805982"><img src="/image/podcast.png"/></a><a href="https://open.spotify.com/show/3vVss8nt0eT89tqrac0UAN"><img src="/image/spotify.png"/></a></div><div>Technical topics that software engineers talk about at lunch.</div></header><div class="content"><article class="episode"><a class="body"><div class="date">2014-02-23</div><div class="title"><span class="number">3.</span>NaN-BoxingによるJavaScriptの最適化</div><div class="desc">今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。</div></a><iframe src="https://anchor.fm/h13i32maru/embed/episodes/3--NaN-BoxingJavaScript-ekrif4/a-a3gce1q" height="102px" width="100%" frameBorder="0" scrolling="no"></iframe><div class="speakers"><a href="https://twitter.com/hnw" target="_blank"><img src="https://pbs.twimg.com/profile_images/56095269/hnw-mixi_400x400.jpg"/></a><a href="https://twitter.com/iizukak" target="_blank"><img src="https://pbs.twimg.com/profile_images/728549599401549830/uZtBRntx_400x400.jpg"/></a><a href="https://twitter.com/h13i32maru" target="_blank"><img src="https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg"/></a></div><div class="notes"><div class="notes-label">Show Notes</div><ul><li class="note"><a href="http://d.hatena.ne.jp/hnw/" target="_blank">hnwの日記</a></li><li class="note"><a href="https://bugs.php.net/bug.php?id=45712" target="_blank">PHPバグレポート</a></li><li class="note"><a href="http://www.delhi.co.jp/" target="_blank">デリー</a></li><li class="note"><a href="http://ja.wikipedia.org/wiki/IEEE_754" target="_blank">IEEE754</a></li><li class="note"><a href="http://d.hatena.ne.jp/hnw/20131231" target="_blank">10進数小数</a></li><li class="note"><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-8.5" target="_blank">The Number Type</a></li><li class="note"><a href="http://wingolog.org/archives/2011/05/18/value-representation-in-javascript-implementations" target="_blank">value representation in javascript implementations</a></li><li class="note"><a href="http://en.wikipedia.org/wiki/X86-64#Virtual_address_space_details" target="_blank">Virtual address space details</a></li><li class="note"><a href="https://trac.webkit.org/browser/releases/WebKitGTK/webkit-2.3.5/Source/JavaScriptCore/runtime/JSCJSValue.h" target="_blank">JavaScriptCore JSValue</a></li></ul></div><div class="footer"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcodelunch.fm%2F3%2F&amp;hashtags=codelunchfm" class="share" target="_blank">ツイート</a></div></article></div><footer>Copyright 2013 - 2021 by <a href="https://twitter.com/h13i32maru">Ryo Maruyama</a> all right reserved.</footer></body></html>
+<html lang="ja">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>3. NaN-BoxingによるJavaScriptの最適化 | CodeLunch.fm</title>
+    <meta name="description" content="今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。" />
+    <link rel="shortcut icon" href="/image/artwork.jpg" />
+    <meta property="og:url" content="https://codelunch.fm/3" />
+    <meta property="og:site_name" content="CodeLunch.fm" />
+    <meta property="og:title" content="3. NaN-BoxingによるJavaScriptの最適化 | CodeLunch.fm" />
+    <meta property="og:description" content="今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:author" content="https://twitter.com/h13i32maru" />
+    <meta property="og:image" content="https://codelunch.fm/image/artwork.jpg" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:site" content="@h13i32maru" />
+    <meta property="twitter:creator" content="@h13i32maru" />
+    <meta property="twitter:title" content="3. NaN-BoxingによるJavaScriptの最適化 | CodeLunch.fm" />
+    <meta property="twitter:description" content="今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。" />
+    <meta property="twitter:image:src" content="https://codelunch.fm/image/artwork.jpg" />
+    <meta property="twitter:image:width" content="512" />
+    <meta property="twitter:image:height" content="512" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+
+<body>
+    <div class="bg"></div>
+    <header><a href="/"><img src="/image/artwork.jpg" class="logo" />
+            <div class="title">CodeLunch.fm</div>
+        </a>
+        <div class="icons"><a href="https://twitter.com/h13i32maru"><img src="/image/twitter.png" /></a><a href="https://anchor.fm/s/77d9b6c/podcast/rss"><img src="/image/rss.png" /></a><a href="https://podcasts.apple.com/jp/podcast/codelunch-fm/id965805982"><img src="/image/podcast.png" /></a><a href="https://open.spotify.com/show/3vVss8nt0eT89tqrac0UAN"><img src="/image/spotify.png" /></a></div>
+        <div>Technical topics that software engineers talk about at lunch.</div>
+    </header>
+    <div class="content">
+        <article class="episode"><a class="body">
+                <div class="date">2014-02-23</div>
+                <div class="title"><span class="number">3.</span>NaN-BoxingによるJavaScriptの最適化</div>
+                <div class="desc">今回は@hnwさんに来て頂いて、浮動小数点数とNaN-BoxingによるJavaScriptの最適化について話をしました。</div>
+            </a><iframe src="https://anchor.fm/h13i32maru/embed/episodes/3--NaN-BoxingJavaScript-ekrif4/a-a3gce1q" height="102px" width="100%" frameBorder="0" scrolling="no"></iframe>
+            <div class="speakers"><a href="https://twitter.com/hnw" target="_blank"><img src="https://pbs.twimg.com/profile_images/56095269/hnw-mixi_400x400.jpg" /></a><a href="https://twitter.com/iizukak" target="_blank"><img src="https://pbs.twimg.com/profile_images/728549599401549830/uZtBRntx_400x400.jpg" /></a><a href="https://twitter.com/h13i32maru" target="_blank"><img src="https://pbs.twimg.com/profile_images/972480914977468418/-vXLVAdL_400x400.jpg" /></a></div>
+            <div class="notes">
+                <div class="notes-label">Show Notes</div>
+                <ul>
+                    <li class="note"><a href="http://d.hatena.ne.jp/hnw/" target="_blank">hnwの日記</a></li>
+                    <li class="note"><a href="https://bugs.php.net/bug.php?id=45712" target="_blank">PHPバグレポート</a></li>
+                    <li class="note"><a href="http://www.delhi.co.jp/" target="_blank">デリー</a></li>
+                    <li class="note"><a href="http://ja.wikipedia.org/wiki/IEEE_754" target="_blank">IEEE754</a></li>
+                    <li class="note"><a href="http://d.hatena.ne.jp/hnw/20131231" target="_blank">10進数小数</a></li>
+                    <li class="note"><a href="http://www.ecma-international.org/ecma-262/5.1/#sec-8.5" target="_blank">The Number Type</a></li>
+                    <li class="note"><a href="http://wingolog.org/archives/2011/05/18/value-representation-in-javascript-implementations" target="_blank">value representation in javascript implementations</a></li>
+                    <li class="note"><a href="http://en.wikipedia.org/wiki/X86-64#Virtual_address_space_details" target="_blank">Virtual address space details</a></li>
+                    <li class="note"><a href="https://trac.webkit.org/browser/releases/WebKitGTK/webkit-2.3.5/Source/JavaScriptCore/runtime/JSCJSValue.h" target="_blank">JavaScriptCore JSValue</a></li>
+                </ul>
+            </div>
+            <div class="footer"><a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fcodelunch.fm%2F3%2F&amp;hashtags=codelunchfm" class="share" target="_blank">ツイート</a></div>
+        </article>
+    </div>
+    <footer>Copyright 2013 - 2021 by <a href="https://twitter.com/h13i32maru">Ryo Maruyama</a> all right reserved.</footer>
+</body>
+
+</html>
