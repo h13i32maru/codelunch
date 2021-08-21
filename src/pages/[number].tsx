@@ -1,9 +1,9 @@
 import React from 'react';
-import { EpisodeDetail } from '../View/EpisodeDetail';
+import { EpisodeDetail } from '../view/EpisodeDetail';
 import { Layout } from '../layout/Layout';
 import { episodes } from '../episodes';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { Episode } from '../Type/Episode';
+import { Episode } from '../type/Episode';
 
 type Props = {
   episode: Episode;

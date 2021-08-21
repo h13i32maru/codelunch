@@ -1,5 +1,5 @@
 import React from 'react';
-import { Note } from '../Type/Note';
+import { Note } from '../type/Note';
 
 type Props = {
   notes: Note[];

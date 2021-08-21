@@ -1,5 +1,5 @@
 import React from 'react';
-import { Episode } from '../Type/Episode';
+import { Episode } from '../type/Episode';
 
 type Props = {
   episode: Episode;

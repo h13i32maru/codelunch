@@ -1,5 +1,5 @@
 import React from 'react';
-import { EpisodeRow } from '../View/EpisodeRow';
+import { EpisodeRow } from '../view/EpisodeRow';
 import { episodes } from '../episodes';
 import { Layout } from '../layout/Layout';
 
