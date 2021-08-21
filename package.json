@@ -5,7 +5,9 @@
   "description": "https://codelunch.fm",
   "scripts": {
     "start": "http-server ./docs",
-    "build": "ts-node src/build.tsx"
+    "build": "ts-node src/build.tsx",
+    "dev": "next dev -p 8080",
+    "export": "next build && next export -o ./docs"
   },
   "devDependencies": {
     "@types/js-beautify": "^1.13.2",
@@ -18,5 +20,8 @@
     "react-dom": "^17.0.2",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"
+  },
+  "dependencies": {
+    "next": "^11.1.0"
   }
 }

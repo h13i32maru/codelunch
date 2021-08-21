@@ -15,7 +15,7 @@ export const EpisodeLayout: React.FC<Props> = (props) => {
 
   return (
     <article className='episode'>
-      <a className='body' href={props.enableLink ? `/${episode.number}` : undefined}>
+      <a className='body' href={props.enableLink ? `/${episode.number}/` : undefined}>
         <div className='date'>{episode.created.split('T')[0]}</div>
         <div className='title'><span className='number'>{episode.number}.</span>{episode.title}</div>
         <div className='desc'>{episode.desc}</div>
