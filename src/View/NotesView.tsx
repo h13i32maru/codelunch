@@ -9,7 +9,7 @@ export const NotesView: React.FC<Props> = (props) => {
   const views = props.notes.map((note, index) => {
     return (
       <li className='note' key={index}>
-        <a href={note.url}>{note.text}</a>
+        <a href={note.url} target='_blank'>{note.text}</a>
       </li>
     );
   });

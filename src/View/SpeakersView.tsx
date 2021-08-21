@@ -8,7 +8,7 @@ type Props = {
 export const SpeakersView: React.FC<Props> = (props) => {
   const views = props.speakers.map(speaker => {
     return (
-      <a href={speaker.url} key={speaker.url}>
+      <a href={speaker.url} target='_blank' key={speaker.url}>
         <img src={speaker.icon}/>
       </a>
     );
