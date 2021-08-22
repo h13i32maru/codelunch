@@ -5,7 +5,7 @@ export const episodes: Episode[] = [
     number: 22,
     title: 'Bdash Server powered by Blitz.js',
     created: '2021-08-22T22:20:00+09:00',
-    desc: '@morishin127とBdash ServerやBlitz.jsについて話をしました。',
+    desc: '@morishin127さんとBdash ServerやBlitz.jsについて話をしました。',
     length: '54:34',
     url: 'https://anchor.fm/h13i32maru/embed/episodes/Bdash-Server-powered-by-Blitz-js-e169jg8',
     speakers: [
