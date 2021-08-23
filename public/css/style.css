@@ -120,7 +120,6 @@ header .icons a {
 }
 
 .episode .body .desc .twitter-id:hover {
-  color: #00daff;
   text-decoration: underline;
 }
 
@@ -153,6 +152,11 @@ header .icons a {
 .episode .notes .note {
   padding: 4px 0;
   margin-left: 20px;
+}
+
+.episode .notes .note:hover {
+  color: #ffd500;
+  text-decoration: underline;
 }
 
 .episode .notice {
